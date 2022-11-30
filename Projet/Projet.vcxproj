@@ -127,12 +127,9 @@
     <ClCompile Include="CmapArticle.cpp" />
     <ClCompile Include="CmapClient.cpp" />
     <ClCompile Include="CmapCom.cpp" />
-    <ClCompile Include="CmapCont.cpp" />
     <ClCompile Include="CmapContient.cpp" />
     <ClCompile Include="CmapPayer.cpp" />
     <ClCompile Include="CmapPers.cpp" />
-    <ClCompile Include="CmapPossFac.cpp" />
-    <ClCompile Include="CmapPossLiv.cpp" />
     <ClCompile Include="CmapSeuil.cpp" />
     <ClCompile Include="CmapTVA.cpp" />
     <ClCompile Include="FormPers.cpp" />
@@ -150,12 +147,9 @@
     <ClInclude Include="CmapArticle.h" />
     <ClInclude Include="CmapClient.h" />
     <ClInclude Include="CmapCom.h" />
-    <ClInclude Include="CmapCont.h" />
     <ClInclude Include="CmapContient.h" />
     <ClInclude Include="CmapPayer.h" />
     <ClInclude Include="CmapPers.h" />
-    <ClInclude Include="CmapPossFac.h" />
-    <ClInclude Include="CmapPossLiv.h" />
     <ClInclude Include="CmapSeuil.h" />
     <ClInclude Include="CmapTVA.h" />
     <ClInclude Include="FormPers.h">

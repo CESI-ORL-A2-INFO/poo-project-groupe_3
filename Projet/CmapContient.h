@@ -14,9 +14,9 @@ namespace NS_Comp_Contient
 		System::String^ Delete(void);
 		System::String^ Update(void);
 		void setRefCom(System::String^);
-		System::String^ setRefCom();
+		System::String^ getRefCom();
 		void setRefArt(System::String^);
-		System::String^ getRegArt();
+		System::String^ getRefArt();
 	};
 }
 
