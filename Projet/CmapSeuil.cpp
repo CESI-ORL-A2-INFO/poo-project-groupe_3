@@ -1,5 +1,10 @@
 #include "CmapSeuil.h"
 
+System::String^ NS_Comp_Seuil::CmapSeuil::SelectAll()
+{
+	return "SELECT * FROM Seuil";
+}
+
 System::String^ NS_Comp_Seuil::CmapSeuil::Select()
 {
 	return "SELECT * FROM Seuil WHERE IdSeuil = '" + this->Id + "'";

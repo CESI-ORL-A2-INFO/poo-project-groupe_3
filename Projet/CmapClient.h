@@ -10,7 +10,7 @@ namespace NS_Comp_Client
 		System::String^ nom;
 		System::String^ prenom;
 		System::String^ date;
-		System::String^ IdAd;
+		int IdAd;
 	public:
 		System::String^ SelectAll(void);
 		System::String^ Select(void);

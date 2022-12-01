@@ -47,6 +47,16 @@ void NS_Comp_Pers::CmapPers::setDate(System::String^ date)
 	this->date = date;
 }
 
+void NS_Comp_Pers::CmapPers::setIdAdresse(int id)
+{
+	this->IdAdresse = id;
+}
+
+void NS_Comp_Pers::CmapPers::setIdSup(int id)
+{
+	this->IdSup = id;
+}
+
 int NS_Comp_Pers::CmapPers::getId()
 {
 	return this->Id;
@@ -65,4 +75,14 @@ System::String^ NS_Comp_Pers::CmapPers::getPrenom()
 System::String^ NS_Comp_Pers::CmapPers::getDate()
 {
 	return this->date;
+}
+
+int NS_Comp_Pers::CmapPers::getIdAdresse()
+{
+	return this->IdAdresse;
+}
+
+int NS_Comp_Pers::CmapPers::getIdSup()
+{
+	return this->IdSup;
 }

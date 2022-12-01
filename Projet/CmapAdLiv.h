@@ -1,8 +1,8 @@
 #pragma once
 
-namespace NS_Comp_AdF
+namespace NS_Comp_AdL
 {
-	ref class CmapAdFac
+	ref class CmapAdLiv
 	{
 	private:
 		System::String^ sSql;

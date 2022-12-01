@@ -123,7 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cadb.cpp" />
-    <ClCompile Include="CmapAdFac.cpp" />
+    <ClCompile Include="CmapAdLiv.cpp" />
     <ClCompile Include="CmapAdresse.cpp" />
     <ClCompile Include="CmapArticle.cpp" />
     <ClCompile Include="CmapClient.cpp" />
@@ -145,7 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cadb.h" />
-    <ClInclude Include="CmapAdFac.h" />
+    <ClInclude Include="CmapAdLiv.h" />
     <ClInclude Include="CmapAdresse.h" />
     <ClInclude Include="CmapArticle.h" />
     <ClInclude Include="CmapClient.h" />

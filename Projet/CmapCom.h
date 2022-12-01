@@ -10,7 +10,7 @@ namespace NS_Comp_Com
 		System::String^ dateReglement;
 		System::String^ dateEmission;
 		System::String^ dateLivraison;
-		System::String^ IdClient;
+		int IdClient;
 	public:
 		System::String^ SelectAll(void);
 		System::String^ Select(void);

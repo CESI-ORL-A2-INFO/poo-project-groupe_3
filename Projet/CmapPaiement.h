@@ -8,8 +8,8 @@ namespace NS_Comp_Paiement
 		System::String^ sSql;
 		System::String^ Reference;
 		System::String^ Date; // Date de paiement
-		System::String^ Prix;
-		System::String^ IdMoyen;
+		float Prix;
+		int IdMoyen;
 	public:
 		System::String^ SelectAll(void);
 		System::String^ Select(void);

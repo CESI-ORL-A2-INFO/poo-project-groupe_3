@@ -1,5 +1,10 @@
 #include "CmapTVA.h"
 
+System::String^ NS_Comp_TVA::CmapTVA::SelectAll()
+{
+	return "SELECT * FROM TVA";
+}
+
 System::String^ NS_Comp_TVA::CmapTVA::Select()
 {
 	return "SELECT * FROM TVA WHERE IdTva = '" + this->Id + "'";
