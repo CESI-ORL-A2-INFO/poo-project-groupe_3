@@ -15,7 +15,7 @@ NS_Svc_Pers::CServicePers::CServicePers()
 System::Data::DataSet^ NS_Svc_Pers::CServicePers::SelectionnerToutPersonnel(System::String^ NomTable)
 {
 	System::String^ sql;
-	sql = this->oMappPers->Select();
+	sql = this->oMappPers->SelectAll();
 	return this->oCad->getRows(sql, NomTable);
 }
 
