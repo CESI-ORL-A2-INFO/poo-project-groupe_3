@@ -1,5 +1,10 @@
 #include "CmapAdFac.h"
 
+System::String^ NS_Comp_AdF::CmapAdFac::SelectAll()
+{
+	return "SELECT * FROM Posseder_Fac";
+}
+
 System::String^ NS_Comp_AdF::CmapAdFac::Select()
 {
 	return "SELECT * FROM Posseder_Fac WHERE IdClient = '" + this->IdClient + "' OR IdAdresse = '" + this->IdAdresse + "'";

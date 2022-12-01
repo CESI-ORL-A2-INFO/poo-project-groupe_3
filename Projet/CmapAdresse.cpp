@@ -1,5 +1,10 @@
 #include "CmapAdresse.h"
 
+System::String^ NS_Comp_Ad::CmapAdresse::SelectAll()
+{
+	return "SELECT * FROM Adresse";
+}
+
 System::String^ NS_Comp_Ad::CmapAdresse::Select()
 {
 	return "SELECT * FROM Adresse WHERE IdAdresse = '" + this->Id + "'";

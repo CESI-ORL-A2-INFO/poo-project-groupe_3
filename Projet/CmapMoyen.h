@@ -8,6 +8,7 @@ namespace NS_Comp_Moyen
 		int Id;
 		System::String^ moyen;
 	public:
+		System::String^ SelectAll(void);
 		System::String^ Select(void);
 		System::String^ Insert(void);
 		System::String^ Delete(void);

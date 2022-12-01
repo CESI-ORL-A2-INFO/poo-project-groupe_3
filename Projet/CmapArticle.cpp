@@ -1,5 +1,10 @@
 #include "CmapArticle.h"
 
+System::String^ NS_Comp_Art::CmapArticle::SelectAll()
+{
+	return "SELECT * FROM Article";
+}
+
 System::String^ NS_Comp_Art::CmapArticle::Select()
 {
 	return "SELECT * FROM Article WHERE RefArticle = '" + this->Reference + "'"; 

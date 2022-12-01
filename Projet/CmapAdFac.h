@@ -9,6 +9,7 @@ namespace NS_Comp_AdF
 		int IdClient;
 		int IdAdresse;
 	public:
+		System::String^ SelectAll(void);
 		System::String^ Select(void);
 		System::String^ Insert(void);
 		System::String^ Delete(void);

@@ -1,7 +1,13 @@
 #include "CmapClient.h"
+
+System::String^ NS_Comp_Client::CmapClient::SelectAll()
+{
+	return "SELECT * FROM Client INNER JOIN Adresse ON IdAdresse = IdAdresseLiv";
+}
+
 System::String^ NS_Comp_Client::CmapClient::Select()
 {
-	return "SELECT * FROM Client WHERE IdClient = '" + this->Id + "'";
+	return "SELECT * FROM Client INNER JOIN Adresse ON IdAdresse = IdAdresseLiv WHERE IdClient = '" + this->Id + "'";
 }
 
 System::String^ NS_Comp_Client::CmapClient::Insert()

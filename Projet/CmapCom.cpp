@@ -1,5 +1,10 @@
 #include "CmapCom.h"
 
+System::String^ NS_Comp_Com::CmapCom::SelectAll()
+{
+	return "SELECT * FROM Commande";
+}
+
 System::String^ NS_Comp_Com::CmapCom::Select()
 {
 	return "SELECT * FROM Commande WHERE RefCommande = '" + this->Reference + "'";

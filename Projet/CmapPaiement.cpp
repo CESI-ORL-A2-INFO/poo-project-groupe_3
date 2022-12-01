@@ -1,8 +1,13 @@
 #include "CmapPaiement.h"
 
+System::String^ NS_Comp_Paiement::CmapPaiement::SelectAll()
+{
+	return "SELECT * FROM Paiement INNER JOIN Moyen ON Moyen.IdMoyen = Paiement.IdMoyen";
+}
+
 System::String^ NS_Comp_Paiement::CmapPaiement::Select()
 {
-	return "SELECT * FROM Paiement WHERE IdPaiement = '" + this->Reference + "'";
+	return "SELECT * FROM Paiement INNER JOIN Moyen ON Moyen.IdMoyen = Paiement.IdMoyen WHERE IdPaiement = '" + this->Reference + "'";
 }
 
 System::String^ NS_Comp_Paiement::CmapPaiement::Insert()

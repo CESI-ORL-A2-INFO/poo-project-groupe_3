@@ -11,6 +11,7 @@ namespace NS_Comp_Art
 		int quantite;
 		float montant;
 	public:
+		System::String^ SelectAll(void);
 		System::String^ Select(void);
 		System::String^ Insert(void);
 		System::String^ Delete(void);

@@ -8,6 +8,7 @@ namespace NS_Comp_Com
 		System::String^ sSql;
 		System::String^ Reference;
 	public:
+		System::String^ SelectAll(void);
 		System::String^ Select(void);
 		System::String^ Insert(void);
 		System::String^ Delete(void);

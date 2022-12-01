@@ -1,5 +1,10 @@
 #include "CmapContient.h"
 
+System::String^ NS_Comp_Contient::CmapContient::SelectAll()
+{
+	return "SELECT * FROM Contient";
+}
+
 System::String^ NS_Comp_Contient::CmapContient::Select()
 {
 	return "SELECT * FROM Contient WHERE RefArticle = '" + this->ReferenceA + "' OR RefCommande = '"+ this->ReferenceC + "'";

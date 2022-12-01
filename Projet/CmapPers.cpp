@@ -1,8 +1,13 @@
 #include "CmapPers.h"
 
+System::String^ NS_Comp_Pers::CmapPers::SelectAll()
+{
+	return "SELECT * FROM Personnel INNER JOIN Adresse ON Id_Adresse = IdAdresse";
+}
+
 System::String^ NS_Comp_Pers::CmapPers::Select()
 {
-	return "SELECT * FROM Personnel WHERE IdPersonnel = '" + this->Id + "'";
+	return "SELECT * FROM Personnel INNER JOIN Adresse ON Id_Adresse = IdAdresse WHERE IdPersonnel = '" + this->Id + "'";
 }
 
 System::String^ NS_Comp_Pers::CmapPers::Insert()

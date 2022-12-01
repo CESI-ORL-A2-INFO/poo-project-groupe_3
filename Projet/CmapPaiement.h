@@ -9,6 +9,7 @@ namespace NS_Comp_Paiement
 		System::String^ Reference;
 		System::String^ Date; // Date de paiement
 	public:
+		System::String^ SelectAll(void);
 		System::String^ Select(void);
 		System::String^ Insert(void);
 		System::String^ Delete(void);

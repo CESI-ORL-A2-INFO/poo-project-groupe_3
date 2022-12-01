@@ -1,5 +1,10 @@
 #include "CmapMoyen.h"
 
+System::String^ NS_Comp_Contient::CmapContient::SelectAll()
+{
+	return "SELECT * FROM Moyen";
+}
+
 System::String^ NS_Comp_Moyen::CmapMoyen::Select()
 {
 	return "SELECT * FROM Moyen WHERE IdMoyen = '" + this->Id + "'";
