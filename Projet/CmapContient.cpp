@@ -2,22 +2,17 @@
 
 System::String^ NS_Comp_Contient::CmapContient::Select()
 {
-	return "";
+	return "SELECT * FROM Contient WHERE RefArticle = '" + this->ReferenceA + "' OR RefCommande = '"+ this->ReferenceC + "'";
 }
 
 System::String^ NS_Comp_Contient::CmapContient::Insert()
 {
-	return "";
+	return "INSERT INTO Contient VALUES ('" + this->ReferenceA + "','" + this->ReferenceC + "')";
 }
 
 System::String^ NS_Comp_Contient::CmapContient::Delete()
 {
-	return "";
-}
-
-System::String^ NS_Comp_Contient::CmapContient::Update()
-{
-	return "";
+	return "DELETE FROM Contient WHERE RefArticle = '" + this->ReferenceA + "' OR RefCommande = '" + this->ReferenceC + "'";
 }
 
 void NS_Comp_Contient::CmapContient::setRefCom(System::String^ RefCom)

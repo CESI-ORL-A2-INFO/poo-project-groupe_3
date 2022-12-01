@@ -2,22 +2,22 @@
 
 System::String^ NS_Comp_TVA::CmapTVA::Select()
 {
-	return "";
+	return "SELECT * FROM TVA WHERE IdTva = '" + this->Id + "'";
 }
 
 System::String^ NS_Comp_TVA::CmapTVA::Insert()
 {
-	return "";
+	return "INSERT INTO TVA VALUES ('" + this->pourcentage + "')";
 }
 
 System::String^ NS_Comp_TVA::CmapTVA::Delete()
 {
-	return "";
+	return "DELETE FROM TVA WHERE IdTva = '" + this->Id + "'";
 }
 
 System::String^ NS_Comp_TVA::CmapTVA::Update()
 {
-	return "";
+	return "UPDATE FROM TVA SET pourcentage = '" + this->pourcentage + "'";
 }
 
 void NS_Comp_TVA::CmapTVA::setId(int id)
@@ -27,7 +27,7 @@ void NS_Comp_TVA::CmapTVA::setId(int id)
 
 void NS_Comp_TVA::CmapTVA::setPourcentage(int pourcentage)
 {
-	this->poucentage = pourcentage;
+	this->pourcentage = pourcentage;
 }
 
 int NS_Comp_TVA::CmapTVA::getId()
@@ -37,5 +37,5 @@ int NS_Comp_TVA::CmapTVA::getId()
 
 int NS_Comp_TVA::CmapTVA::getPourcentage()
 {
-	return this->poucentage;
+	return this->pourcentage;
 }

@@ -1,21 +1,22 @@
 #pragma once
-
-namespace NS_Comp_AdL
+namespace NS_Comp_Moyen
 {
-	ref class CmapAdLiv
+	ref class CmapMoyen
 	{
 	private:
 		System::String^ sSql;
-		int Id_client;
-		int Id_Adresse;
+		int Id;
+		System::String^ moyen;
 	public:
 		System::String^ Select(void);
 		System::String^ Insert(void);
 		System::String^ Delete(void);
 		System::String^ Update(void);
-		void setId_c(int);
-		int getId_c();
-		void setId_a(int);
-		int getId_a();
+		void setId(int);
+		int getId();
+		void setMoyen(System::String^);	
+		System::String^ getMoyen();
 	};
 }
+
+

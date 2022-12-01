@@ -6,7 +6,7 @@ namespace NS_Comp_TVA
 	private:
 		System::String^ sSql;
 		int Id;
-		int poucentage;
+		int pourcentage;
 	public:
 		System::String^ Select(void);
 		System::String^ Insert(void);

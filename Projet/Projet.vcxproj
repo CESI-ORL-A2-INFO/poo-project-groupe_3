@@ -92,6 +92,8 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>WinMain</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -122,13 +124,13 @@
   <ItemGroup>
     <ClCompile Include="Cadb.cpp" />
     <ClCompile Include="CmapAdFac.cpp" />
-    <ClCompile Include="CmapAdLiv.cpp" />
     <ClCompile Include="CmapAdresse.cpp" />
     <ClCompile Include="CmapArticle.cpp" />
     <ClCompile Include="CmapClient.cpp" />
     <ClCompile Include="CmapCom.cpp" />
     <ClCompile Include="CmapContient.cpp" />
-    <ClCompile Include="CmapPayer.cpp" />
+    <ClCompile Include="CmapMoyen.cpp" />
+    <ClCompile Include="CmapPaiement.cpp" />
     <ClCompile Include="CmapPers.cpp" />
     <ClCompile Include="CmapSeuil.cpp" />
     <ClCompile Include="CmapTVA.cpp" />
@@ -144,13 +146,13 @@
   <ItemGroup>
     <ClInclude Include="Cadb.h" />
     <ClInclude Include="CmapAdFac.h" />
-    <ClInclude Include="CmapAdLiv.h" />
     <ClInclude Include="CmapAdresse.h" />
     <ClInclude Include="CmapArticle.h" />
     <ClInclude Include="CmapClient.h" />
     <ClInclude Include="CmapCom.h" />
     <ClInclude Include="CmapContient.h" />
-    <ClInclude Include="CmapPayer.h" />
+    <ClInclude Include="CmapMoyen.h" />
+    <ClInclude Include="CmapPaiement.h" />
     <ClInclude Include="CmapPers.h" />
     <ClInclude Include="CmapSeuil.h" />
     <ClInclude Include="CmapTVA.h" />

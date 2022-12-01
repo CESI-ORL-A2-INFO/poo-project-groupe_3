@@ -1,8 +1,8 @@
 #pragma once
 
-namespace NS_Comp_Payer
+namespace NS_Comp_Paiement
 {
-	ref class CmapPayer
+	ref class CmapPaiement
 	{
 	private:
 		System::String^ sSql;

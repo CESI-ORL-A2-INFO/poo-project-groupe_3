@@ -2,22 +2,22 @@
 
 System::String^ NS_Comp_Seuil::CmapSeuil::Select()
 {
-	return "";
+	return "SELECT * FROM Seuil WHERE IdSeuil = '" + this->Id + "'";
 }
 
 System::String^ NS_Comp_Seuil::CmapSeuil::Insert()
 {
-	return "";
+	return "INSERT INTO Seuil VALUES ('" + this->seuil + "')";
 }
 
 System::String^ NS_Comp_Seuil::CmapSeuil::Delete()
 {
-	return "";
+	return "DELETE FROM Seuil WHERE IdSeuil = '" + this->Id + "'";
 }
 
 System::String^ NS_Comp_Seuil::CmapSeuil::Update()
 {
-	return "";
+	return "UPDATE FROM Seuil SET seuil = '" + this->seuil + "'";
 }
 
 void NS_Comp_Seuil::CmapSeuil::setId(int Id)

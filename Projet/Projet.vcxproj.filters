@@ -48,10 +48,7 @@
     <ClCompile Include="CmapAdFac.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="CmapAdLiv.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CmapPayer.cpp">
+    <ClCompile Include="CmapPaiement.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="CmapCom.cpp">
@@ -69,10 +66,7 @@
     <ClCompile Include="CmapSeuil.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="FormStat.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CServicePers.cpp">
+    <ClCompile Include="CmapMoyen.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -110,10 +104,7 @@
     <ClInclude Include="CmapAdFac.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="CmapAdLiv.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="CmapPayer.h">
+    <ClInclude Include="CmapPaiement.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="CmapCom.h">
@@ -131,10 +122,7 @@
     <ClInclude Include="CmapSeuil.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="FormStat.h">
-      <Filter>Fichiers sources</Filter>
-    </ClInclude>
-    <ClInclude Include="CServicePers.h">
+    <ClInclude Include="CmapMoyen.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

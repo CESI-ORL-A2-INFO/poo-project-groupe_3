@@ -6,8 +6,8 @@ namespace NS_Comp_AdF
 	{
 	private:
 		System::String^ sSql;
-		int Id_client;
-		int Id_Adresse;
+		int IdClient;
+		int IdAdresse;
 	public:
 		System::String^ Select(void);
 		System::String^ Insert(void);
