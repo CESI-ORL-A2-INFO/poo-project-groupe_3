@@ -12,8 +12,7 @@ System::String^ NS_Comp_Com::CmapCom::Select()
 
 System::String^ NS_Comp_Com::CmapCom::Insert()
 {
-	return "INSERT INTO Commande VALUES ('" + this->date1 + 
-	"','" + this->date2 + "','" + this->date3 + "','" + this->IdClient +"')" 
+	return "INSERT INTO Commande VALUES ('" + this->dateReglement + "','" + this->dateEmission + "','" + this->dateLivraison + "','" + this->IdClient + "')";
 	// "\n INSERT INTO Contient VALUES('" + this->Reference + "','" + this->contenu[i] "')";
 }
 
@@ -26,8 +25,8 @@ System::String^ NS_Comp_Com::CmapCom::Delete()
 
 System::String^ NS_Comp_Com::CmapCom::Update()
 {
-	return "UPDATE Commande SET reglement = '" + this->date1 + "', emission = '" +
-	this->date2 + "', livraison = '" + this->date3 + "', client = '" + this->clientid + 
+	return "UPDATE Commande SET reglement = '" + this->dateReglement + "', emission = '" +
+	this->dateEmission + "', livraison = '" + this->dateLivraison + "', client = '" + this->IdClient + 
 	"'WHERE RefCommande = '" + this->Reference + "'";
 }
 

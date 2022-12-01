@@ -12,7 +12,7 @@ System::String^ NS_Comp_Paiement::CmapPaiement::Select()
 
 System::String^ NS_Comp_Paiement::CmapPaiement::Insert()
 {
-	return "INSERT INTO Paiement VALUES ('" + this->Date + "','" + this->prix + "','" + this->IdMoyen + "')";
+	return "INSERT INTO Paiement VALUES ('" + this->Date + "','" + this->Prix + "','" + this->IdMoyen + "')";
 }
 
 System::String^ NS_Comp_Paiement::CmapPaiement::Delete()
@@ -22,7 +22,7 @@ System::String^ NS_Comp_Paiement::CmapPaiement::Delete()
 
 System::String^ NS_Comp_Paiement::CmapPaiement::Update()
 {
-	return "UPDATE Paiement SET date = '" + this->Date + "', prix = '" + this->prix + "', IdMoyen = '" + this->Idmoyen + "'";
+	return "UPDATE Paiement SET date = '" + this->Date + "', prix = '" + this->Prix + "', IdMoyen = '" + this->IdMoyen + "'";
 }
 
 void NS_Comp_Paiement::CmapPaiement::setRef(System::String^ Ref)

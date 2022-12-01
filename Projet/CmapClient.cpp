@@ -12,7 +12,7 @@ System::String^ NS_Comp_Client::CmapClient::Select()
 
 System::String^ NS_Comp_Client::CmapClient::Insert()
 {
-	return "INSERT INTO Client VALUES ('" + this->date + "','" + this->nom + "','" + this->prenom + "','" + this->IdLiv + "')\n";
+	return "INSERT INTO Client VALUES ('" + this->date + "','" + this->nom + "','" + this->prenom + "','" + this->IdAd + "')\n";
 	// INSERT INTO Posseder_liv VALUES (id, adresses[i])
 }
 

@@ -12,7 +12,7 @@ System::String^ NS_Comp_Pers::CmapPers::Select()
 
 System::String^ NS_Comp_Pers::CmapPers::Insert()
 {
-	return "INSERT INTO Personnel VALUES ('" + this->nom + "','" + this->prenom + "','" + this->date + "','" + this->IdSuperviseur + "');";
+	return "INSERT INTO Personnel VALUES ('" + this->nom + "','" + this->prenom + "','" + this->date + "','" + this->IdSup + "');";
 }
 
 System::String^ NS_Comp_Pers::CmapPers::Delete()
@@ -24,7 +24,7 @@ System::String^ NS_Comp_Pers::CmapPers::Delete()
 
 System::String^ NS_Comp_Pers::CmapPers::Update()
 {
-	return "UPDATE Personnel SET nom = '" + this->nom + "', Prenom ='" + this->prenom + "', Date ='" + this->date + "', IdSuperviseur = '" + this->IdSuperviseur + "' WHERE IdPersonnel = '" + this->Id + "'";
+	return "UPDATE Personnel SET nom = '" + this->nom + "', Prenom ='" + this->prenom + "', Date ='" + this->date + "', IdSuperviseur = '" + this->IdSup + "' WHERE IdPersonnel = '" + this->Id + "'";
 }
 
 void NS_Comp_Pers::CmapPers::setId(int id)

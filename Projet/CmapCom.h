@@ -7,6 +7,10 @@ namespace NS_Comp_Com
 	private:
 		System::String^ sSql;
 		System::String^ Reference;
+		System::String^ dateReglement;
+		System::String^ dateEmission;
+		System::String^ dateLivraison;
+		System::String^ IdClient;
 	public:
 		System::String^ SelectAll(void);
 		System::String^ Select(void);

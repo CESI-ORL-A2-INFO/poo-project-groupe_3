@@ -1,6 +1,6 @@
 #include "CmapMoyen.h"
 
-System::String^ NS_Comp_Contient::CmapContient::SelectAll()
+System::String^ NS_Comp_Moyen::CmapMoyen::SelectAll()
 {
 	return "SELECT * FROM Moyen";
 }
