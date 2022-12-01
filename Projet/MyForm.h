@@ -4,6 +4,8 @@
 #include "FormCom.h"
 #include "FormStock.h"
 #include "FormFacture.h"
+#include "FormStat.h"
+#include "CServicePers.h"
 
 namespace Projet {
 
@@ -45,6 +47,7 @@ namespace Projet {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ button6;
 
 	private:
 		/// <summary>
@@ -64,6 +67,7 @@ namespace Projet {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -116,11 +120,22 @@ namespace Projet {
 			this->button5->UseVisualStyleBackColor = true;
 			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
 			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(131, 306);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(115, 23);
+			this->button6->TabIndex = 5;
+			this->button6->Text = L"Statistiques";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(401, 434);
+			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
@@ -151,6 +166,10 @@ namespace Projet {
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 		Form6^ FormFacture = gcnew Form6();
 		FormFacture->Show();
+}
+private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+		FormStat^ FormStats = gcnew FormStat();
+		FormStats->Show();
 }
 };
 }

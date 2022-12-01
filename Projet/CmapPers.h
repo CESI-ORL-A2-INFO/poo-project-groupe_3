@@ -10,6 +10,8 @@ namespace NS_Comp_Pers
 		System::String^ nom;
 		System::String^ prenom;
 		System::String^ date;
+		int IdSup;
+		int IdAdresse;
 	public:
 		System::String^ Select(void);
 		System::String^ Insert(void);
@@ -23,6 +25,10 @@ namespace NS_Comp_Pers
 		System::String^ getPrenom();
 		void setDate(System::String^);
 		System::String^ getDate();
+		void setIdSup(int);
+		int getIdSup();
+		void setIdAdresse(int);
+		int getIdAdresse();
 	};
 }
 

@@ -132,9 +132,11 @@
     <ClCompile Include="CmapPers.cpp" />
     <ClCompile Include="CmapSeuil.cpp" />
     <ClCompile Include="CmapTVA.cpp" />
+    <ClCompile Include="CServicePers.cpp" />
     <ClCompile Include="FormPers.cpp" />
     <ClCompile Include="FormClient.cpp" />
     <ClCompile Include="FormCom.cpp" />
+    <ClCompile Include="FormStat.cpp" />
     <ClCompile Include="FormStock.cpp" />
     <ClCompile Include="FormFacture.cpp" />
     <ClCompile Include="MyForm.cpp" />
@@ -152,6 +154,7 @@
     <ClInclude Include="CmapPers.h" />
     <ClInclude Include="CmapSeuil.h" />
     <ClInclude Include="CmapTVA.h" />
+    <ClInclude Include="CServicePers.h" />
     <ClInclude Include="FormPers.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -159,6 +162,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="FormCom.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FormStat.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="FormStock.h">
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCom.resx">
       <DependentUpon>FormCom.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStat.resx">
+      <DependentUpon>FormStat.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStock.resx">
       <DependentUpon>FormStock.h</DependentUpon>

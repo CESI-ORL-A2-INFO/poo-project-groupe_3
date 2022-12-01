@@ -2,7 +2,7 @@
 
 NS_Comp_Data::Cadb::Cadb(void)
 {
-	this->sCnx = "Data Source = cesi-orl-maxence.database.windows.net;Initial Catalog = ProjetPooG3; User ID = cesi-orl; Password=Azertyuiop_";
+	this->sCnx = "Data Source = cesi-orl-maxence.database.windows.net;Initial Catalog = ProjetPoo; User ID = cesi-orl; Password=Azertyuiop_";
 
 	this->sSql = "Null";
 
