@@ -68,9 +68,10 @@ namespace Projet {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(131, 99);
+			this->button1->Location = System::Drawing::Point(175, 122);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(115, 23);
+			this->button1->Size = System::Drawing::Size(153, 28);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Gestion Personnel";
 			this->button1->UseVisualStyleBackColor = true;
@@ -78,9 +79,10 @@ namespace Projet {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(131, 142);
+			this->button2->Location = System::Drawing::Point(175, 175);
+			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(115, 23);
+			this->button2->Size = System::Drawing::Size(153, 28);
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"Gestion Client";
 			this->button2->UseVisualStyleBackColor = true;
@@ -88,9 +90,10 @@ namespace Projet {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(131, 184);
+			this->button3->Location = System::Drawing::Point(175, 226);
+			this->button3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(115, 23);
+			this->button3->Size = System::Drawing::Size(153, 28);
 			this->button3->TabIndex = 2;
 			this->button3->Text = L"Gestion Commande";
 			this->button3->UseVisualStyleBackColor = true;
@@ -98,9 +101,10 @@ namespace Projet {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(131, 224);
+			this->button4->Location = System::Drawing::Point(175, 276);
+			this->button4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(115, 23);
+			this->button4->Size = System::Drawing::Size(153, 28);
 			this->button4->TabIndex = 3;
 			this->button4->Text = L"Gestion Stock";
 			this->button4->UseVisualStyleBackColor = true;
@@ -108,9 +112,10 @@ namespace Projet {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(131, 266);
+			this->button5->Location = System::Drawing::Point(175, 327);
+			this->button5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(115, 23);
+			this->button5->Size = System::Drawing::Size(153, 28);
 			this->button5->TabIndex = 4;
 			this->button5->Text = L"Facture";
 			this->button5->UseVisualStyleBackColor = true;
@@ -118,16 +123,18 @@ namespace Projet {
 			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(401, 434);
+			this->ClientSize = System::Drawing::Size(535, 534);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
+			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->ResumeLayout(false);
 
 		}
@@ -151,6 +158,8 @@ namespace Projet {
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 		Form6^ FormFacture = gcnew Form6();
 		FormFacture->Show();
+}
+private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
