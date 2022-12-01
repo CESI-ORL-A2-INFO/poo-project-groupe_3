@@ -7,10 +7,12 @@ NS_Svc_Pers::CServicePers::CServicePers()
 	this->oMappPers = gcnew NS_Comp_Pers::CmapPers();
 }
 
-/*System::Data::DataSet^ NS_Svc_Pers::CServicePers::SelectionnerPersonnel(int id)
+System::Data::DataSet^ NS_Svc_Pers::CServicePers::SelectionnerPersonnel(int id, System::String^ NomTable)
 {
-	
-}*/
+	System::String^ sql;
+	sql = this->oMappPers->Select(id);
+	return this->oCad->getRows(sql, NomTable);
+}
 
 System::Data::DataSet^ NS_Svc_Pers::CServicePers::SelectionnerToutPersonnel(System::String^ NomTable)
 {

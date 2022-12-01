@@ -130,6 +130,7 @@ namespace Projet {
 			this->button3->TabIndex = 3;
 			this->button3->Text = L"Afficher Personnel";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Form2::button3_Click);
 			// 
 			// button4
 			// 
@@ -314,6 +315,10 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->oSvc->SuppPersonnel(int::Parse(this->textBox1->Text));
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->oDs = this->oSvc->SelectionnerPersonnel(int::Parse(this->textBox1->Text), "Personnel");
+	// do some parsing...
 }
 };
 }

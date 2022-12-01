@@ -20,7 +20,6 @@ System::Data::DataSet^ NS_Comp_Data::Cadb::getRows(System::String^ sSql, System:
 	this->oCmd->CommandText = this->sSql;
 	this->oDa->SelectCommand = this->oCmd;
 	this->oDa->Fill(this->oDs, sDataTableName);
-
 	return this->oDs;
 }
 void NS_Comp_Data::Cadb::actionRows(System::String^ sSql)

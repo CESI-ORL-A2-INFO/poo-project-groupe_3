@@ -2,12 +2,12 @@
 
 System::String^ NS_Comp_Pers::CmapPers::SelectAll()
 {
-	return "SELECT * FROM Personnel INNER JOIN Adresse ON Id_Adresse = IdAdresse";
+	return "SELECT IdPersonnel, nom, prenom, date_embauche, IdPersonnel_1, IdAd FROM Personnel INNER JOIN Adresse ON IdAdresse = IdAd";
 }
 
-System::String^ NS_Comp_Pers::CmapPers::Select()
+System::String^ NS_Comp_Pers::CmapPers::Select(int id)
 {
-	return "SELECT * FROM Personnel INNER JOIN Adresse ON Id_Adresse = IdAdresse WHERE IdPersonnel = '" + this->Id + "'";
+	return "SELECT * FROM Personnel INNER JOIN Adresse ON Id_Adresse = IdAdresse WHERE IdPersonnel = '" + id + "'";
 }
 
 System::String^ NS_Comp_Pers::CmapPers::Insert()
