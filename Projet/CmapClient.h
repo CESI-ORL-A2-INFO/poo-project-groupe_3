@@ -10,6 +10,7 @@ namespace NS_Comp_Client
 		System::String^ nom;
 		System::String^ prenom;
 		System::String^ date;
+		int IdAd;
 	public:
 		System::String^ Select(void);
 		System::String^ Insert(void);
@@ -23,6 +24,8 @@ namespace NS_Comp_Client
 		System::String^ getPrenom();
 		void setDate(System::String^);
 		System::String^ getDate();
+		void setIdAd(int);
+		int getIdAd();
 	};
 }
 

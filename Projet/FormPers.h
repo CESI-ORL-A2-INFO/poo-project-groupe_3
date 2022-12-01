@@ -258,6 +258,7 @@ namespace Projet {
 			this->textBox10->Size = System::Drawing::Size(100, 20);
 			this->textBox10->TabIndex = 18;
 			this->textBox10->Text = L"Id Adresse";
+			this->textBox10->TextChanged += gcnew System::EventHandler(this, &Form2::textBox10_TextChanged);
 			// 
 			// Form2
 			// 
@@ -314,6 +315,8 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->oSvc->SuppPersonnel(int::Parse(this->textBox1->Text));
+}
+private: System::Void textBox10_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

@@ -1,5 +1,5 @@
 #pragma once
-
+#include "CServiceClient.h"
 namespace Projet {
 
 	using namespace System;
@@ -59,6 +59,10 @@ namespace Projet {
 	private: System::Windows::Forms::TextBox^ textBox11;
 	private: System::Windows::Forms::TextBox^ textBox12;
 	private: System::ComponentModel::IContainer^ components;
+	private: NS_Svc_Client::CServiceClient^ oSvc;
+
+	private: System::Windows::Forms::TextBox^ textBox13;
+	private: System::Data::DataSet^ oDs;
 	protected:
 
 	private:
@@ -98,6 +102,7 @@ namespace Projet {
 			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox11 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox12 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox13 = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -118,6 +123,7 @@ namespace Projet {
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->Size = System::Drawing::Size(765, 207);
 			this->dataGridView1->TabIndex = 1;
+			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Form3::dataGridView1_CellContentClick);
 			// 
 			// label2
 			// 
@@ -181,7 +187,7 @@ namespace Projet {
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(100, 20);
 			this->textBox4->TabIndex = 26;
-			this->textBox4->Text = L"XX/XX/XXXX";
+			this->textBox4->Text = L"XXXX-XX-XX";
 			this->textBox4->TextChanged += gcnew System::EventHandler(this, &Form3::textBox4_TextChanged);
 			// 
 			// textBox3
@@ -307,11 +313,21 @@ namespace Projet {
 			this->textBox12->TabIndex = 39;
 			this->textBox12->Text = L"Ville";
 			// 
+			// textBox13
+			// 
+			this->textBox13->Location = System::Drawing::Point(384, 395);
+			this->textBox13->Name = L"textBox13";
+			this->textBox13->Size = System::Drawing::Size(100, 20);
+			this->textBox13->TabIndex = 41;
+			this->textBox13->Text = L"Id Adresse";
+			this->textBox13->TextChanged += gcnew System::EventHandler(this, &Form3::textBox13_TextChanged);
+			// 
 			// Form3
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(789, 498);
+			this->Controls->Add(this->textBox13);
 			this->Controls->Add(this->textBox12);
 			this->Controls->Add(this->textBox11);
 			this->Controls->Add(this->textBox10);
@@ -347,6 +363,7 @@ namespace Projet {
 		Close();
 	}
 	private: System::Void Form3_Load(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc = gcnew NS_Svc_Client::CServiceClient();
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -371,14 +388,24 @@ private: System::Void textBox2_TextChanged(System::Object^ sender, System::Event
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->oSvc->AjouterClient(this->textBox2->Text, this->textBox3->Text, this->textBox4->Text, int::Parse(this->textBox13->Text));
 	}
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->oSvc->SuppClient(int::Parse(this->textBox1->Text));
 	}
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
+	this->dataGridView1->Refresh();
+	this->oDs = this->oSvc->SelectionnerToutClient("Client");
+	this->dataGridView1->DataSource = this->oDs;
+	this->dataGridView1->DataMember = "Client";
+}
+private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
+private: System::Void textBox13_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

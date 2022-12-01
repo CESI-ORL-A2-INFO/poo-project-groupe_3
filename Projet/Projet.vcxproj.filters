@@ -75,6 +75,9 @@
     <ClCompile Include="CServicePers.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="CServiceClient.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -135,6 +138,9 @@
       <Filter>Fichiers sources</Filter>
     </ClInclude>
     <ClInclude Include="CServicePers.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="CServiceClient.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

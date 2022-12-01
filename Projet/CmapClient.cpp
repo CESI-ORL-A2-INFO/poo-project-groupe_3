@@ -1,17 +1,17 @@
 #include "CmapClient.h"
 System::String^ NS_Comp_Client::CmapClient::Select()
 {
-	return "SELECT [id],[nom],[prenom],[date] FROM [Client]";
+	return "SELECT [IdClient],[nom],[prenom],[date_naissance], [IdAd] FROM [Client]";
 }
 
 System::String^ NS_Comp_Client::CmapClient::Insert()
 {
-	return "INSERT INTO Client (nom, prenom, date) VALUES ('" + this->nom + "','" + this->prenom + "','" + this->date + "');";
+	return "INSERT INTO Client (nom, prenom, date_naissance, Client.IdAd) VALUES ('" + this->nom + "','" + this->prenom + "','" + this->date + "','" + this->IdAd + "');";
 }
 
 System::String^ NS_Comp_Client::CmapClient::Delete()
 {
-	return "DELETE FROM Client WHERE Client.Id = ('" + this->Id + "')";
+	return "DELETE FROM Paiement WHERE RefCommande IN(SELECT RefCommande FROM Commande WHERE IdClient = '" + this->Id+"') DELETE FROM Contient WHERE RefCommande IN(SELECT RefCommande FROM Commande WHERE IdClient = '" + this->Id+"') DELETE FROM Commande WHERE IdClient = '" + this->Id+"' DELETE FROM Posseder_liv WHERE IdClient = '" + this->Id+"' DELETE FROM Adresse WHERE IdAdresse  NOT IN(SELECT IdAdresse FROM Posseder_Liv) AND IdAdresse NOT IN(SELECT IdAd FROM Personnel) DELETE FROM Client WHERE IdClient = '" + this->Id+"'";
 }
 
 System::String^ NS_Comp_Client::CmapClient::Update()
@@ -57,4 +57,14 @@ System::String^ NS_Comp_Client::CmapClient::getPrenom()
 System::String^ NS_Comp_Client::CmapClient::getDate()
 {
 	return this->date;
+}
+
+void NS_Comp_Client::CmapClient::setIdAd(int id)
+{
+	this->IdAd = id;
+}
+
+int NS_Comp_Client::CmapClient::getIdAd()
+{
+	return this->IdAd;
 }
