@@ -51,6 +51,9 @@ namespace Projet {
 	private: NS_Svc_Stock::CServiceStock^ oSvc;
 	private: System::Data::DataSet^ oDs;
 	private: System::Data::DataSet^ DataStock;
+	private: System::Windows::Forms::ComboBox^ TVAbox;
+	private: System::Windows::Forms::ComboBox^ comboBox1;
+
 	protected:
 		
 	private:
@@ -80,6 +83,8 @@ namespace Projet {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->TVAbox = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -104,7 +109,7 @@ namespace Projet {
 			// 
 			// textBox13
 			// 
-			this->textBox13->Location = System::Drawing::Point(549, 292);
+			this->textBox13->Location = System::Drawing::Point(487, 322);
 			this->textBox13->Name = L"textBox13";
 			this->textBox13->Size = System::Drawing::Size(100, 20);
 			this->textBox13->TabIndex = 52;
@@ -114,7 +119,7 @@ namespace Projet {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(433, 253);
+			this->label1->Location = System::Drawing::Point(371, 248);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(57, 13);
 			this->label1->TabIndex = 51;
@@ -122,7 +127,7 @@ namespace Projet {
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(424, 353);
+			this->textBox4->Location = System::Drawing::Point(362, 348);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(100, 20);
 			this->textBox4->TabIndex = 50;
@@ -130,7 +135,7 @@ namespace Projet {
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(424, 327);
+			this->textBox3->Location = System::Drawing::Point(362, 322);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(100, 20);
 			this->textBox3->TabIndex = 49;
@@ -138,7 +143,7 @@ namespace Projet {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(424, 301);
+			this->textBox2->Location = System::Drawing::Point(362, 296);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(100, 20);
 			this->textBox2->TabIndex = 48;
@@ -146,7 +151,7 @@ namespace Projet {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(424, 275);
+			this->textBox1->Location = System::Drawing::Point(362, 270);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(100, 20);
 			this->textBox1->TabIndex = 47;
@@ -154,7 +159,7 @@ namespace Projet {
 			// 
 			// button6
 			// 
-			this->button6->Location = System::Drawing::Point(254, 292);
+			this->button6->Location = System::Drawing::Point(192, 287);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(141, 23);
 			this->button6->TabIndex = 46;
@@ -164,7 +169,7 @@ namespace Projet {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(254, 359);
+			this->button5->Location = System::Drawing::Point(192, 354);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(141, 23);
 			this->button5->TabIndex = 45;
@@ -174,7 +179,7 @@ namespace Projet {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(254, 327);
+			this->button4->Location = System::Drawing::Point(192, 322);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(141, 23);
 			this->button4->TabIndex = 44;
@@ -184,7 +189,7 @@ namespace Projet {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(254, 259);
+			this->button3->Location = System::Drawing::Point(192, 254);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(141, 23);
 			this->button3->TabIndex = 43;
@@ -194,7 +199,7 @@ namespace Projet {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(113, 259);
+			this->button2->Location = System::Drawing::Point(51, 254);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(124, 123);
 			this->button2->TabIndex = 42;
@@ -204,18 +209,43 @@ namespace Projet {
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(549, 318);
+			this->textBox5->Location = System::Drawing::Point(487, 348);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(100, 20);
 			this->textBox5->TabIndex = 53;
 			this->textBox5->Text = L"Seuil";
 			this->textBox5->TextChanged += gcnew System::EventHandler(this, &Form5::textBox5_TextChanged);
 			// 
+			// TVAbox
+			// 
+			this->TVAbox->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->TVAbox->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->TVAbox->FormattingEnabled = true;
+			this->TVAbox->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"5 %", L"10 %", L"15 % ", L"20 %" });
+			this->TVAbox->Location = System::Drawing::Point(487, 262);
+			this->TVAbox->Name = L"TVAbox";
+			this->TVAbox->Size = System::Drawing::Size(121, 21);
+			this->TVAbox->TabIndex = 54;
+			this->TVAbox->Text = L"TVA";
+			this->TVAbox->SelectedIndexChanged += gcnew System::EventHandler(this, &Form5::TVAbox_SelectedIndexChanged);
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"5", L"7", L"10", L"12", L"15" });
+			this->comboBox1->Location = System::Drawing::Point(487, 289);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(121, 21);
+			this->comboBox1->TabIndex = 55;
+			this->comboBox1->Text = L"Seuil";
+			// 
 			// Form5
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(673, 421);
+			this->Controls->Add(this->comboBox1);
+			this->Controls->Add(this->TVAbox);
 			this->Controls->Add(this->textBox5);
 			this->Controls->Add(this->textBox13);
 			this->Controls->Add(this->label1);
@@ -277,6 +307,10 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	this->textBox4->Text = ReadStock->GetValue(3)->ToString();
 	//this->textBox13->Text = ReadPers->GetValue(4)->ToString();
 	//this->textBox5->Text = ReadPers->GetValue(5)->ToString();
+}
+private: System::Void menuStrip1_ItemClicked(System::Object^ sender, System::Windows::Forms::ToolStripItemClickedEventArgs^ e) {
+}
+private: System::Void TVAbox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
