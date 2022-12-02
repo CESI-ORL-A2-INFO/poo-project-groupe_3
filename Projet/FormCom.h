@@ -1,5 +1,5 @@
 #pragma once
-
+#include "CServiceCom.h"
 namespace Projet {
 
 	using namespace System;
@@ -50,6 +50,8 @@ namespace Projet {
 	private: System::Windows::Forms::TextBox^ textBox6;
 	private: System::Windows::Forms::TextBox^ textBox7;
 	private: System::Windows::Forms::Label^ label2;
+	private: NS_Svc_Com::CServiceCom^ oSvc;
+	private: System::Data::DataSet^ oDs;
 	protected:
 
 	private:
@@ -102,6 +104,7 @@ namespace Projet {
 			this->button6->TabIndex = 27;
 			this->button6->Text = L"Ajouter Commande";
 			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &Form4::button6_Click);
 			// 
 			// button5
 			// 
@@ -111,6 +114,7 @@ namespace Projet {
 			this->button5->TabIndex = 26;
 			this->button5->Text = L"Supprimer Commande";
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &Form4::button5_Click);
 			// 
 			// button4
 			// 
@@ -120,6 +124,7 @@ namespace Projet {
 			this->button4->TabIndex = 25;
 			this->button4->Text = L"Mettre à jour";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &Form4::button4_Click);
 			// 
 			// button3
 			// 
@@ -196,6 +201,7 @@ namespace Projet {
 			this->textBox5->Size = System::Drawing::Size(100, 20);
 			this->textBox5->TabIndex = 34;
 			this->textBox5->Text = L"Id Client";
+			this->textBox5->TextChanged += gcnew System::EventHandler(this, &Form4::textBox5_TextChanged);
 			// 
 			// textBox6
 			// 
@@ -245,6 +251,7 @@ namespace Projet {
 			this->Controls->Add(this->button1);
 			this->Name = L"Form4";
 			this->Text = L"Form4";
+			this->Load += gcnew System::EventHandler(this, &Form4::Form4_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -255,7 +262,24 @@ namespace Projet {
 		Close();
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-		
+		this->dataGridView1->Refresh();
+		this->oDs = this->oSvc->SelectionnerToutCommande("Commande");
+		this->dataGridView1->DataSource = this->oDs;
+		this->dataGridView1->DataMember = "Commande";
 	}
+private: System::Void Form4_Load(System::Object^ sender, System::EventArgs^ e) {
+	this->oSvc = gcnew NS_Svc_Com::CServiceCom();
+}
+private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->oSvc->AjouterCommande(this->textBox1->Text, this->textBox2->Text, this->textBox3->Text, this->textBox4->Text, int::Parse(this->textBox5->Text));
+}
+private: System::Void textBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->oSvc->SuppCommande(this->textBox1->Text);
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->oSvc->ModifierCommande(this->textBox1->Text, this->textBox2->Text, this->textBox3->Text, this->textBox4->Text, int::Parse(this->textBox5->Text));
+}
 };
 }

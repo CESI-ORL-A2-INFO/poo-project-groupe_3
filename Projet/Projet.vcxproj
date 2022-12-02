@@ -133,7 +133,9 @@
     <ClCompile Include="CmapSeuil.cpp" />
     <ClCompile Include="CmapTVA.cpp" />
     <ClCompile Include="CServiceClient.cpp" />
+    <ClCompile Include="CServiceCom.cpp" />
     <ClCompile Include="CServicePers.cpp" />
+    <ClCompile Include="CServiceStock.cpp" />
     <ClCompile Include="FormPers.cpp" />
     <ClCompile Include="FormClient.cpp" />
     <ClCompile Include="FormCom.cpp" />
@@ -156,7 +158,9 @@
     <ClInclude Include="CmapSeuil.h" />
     <ClInclude Include="CmapTVA.h" />
     <ClInclude Include="CServiceClient.h" />
+    <ClInclude Include="CServiceCom.h" />
     <ClInclude Include="CServicePers.h" />
+    <ClInclude Include="CServiceStock.h" />
     <ClInclude Include="FormPers.h">
       <FileType>CppForm</FileType>
     </ClInclude>

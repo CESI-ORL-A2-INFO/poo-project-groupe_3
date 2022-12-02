@@ -394,7 +394,8 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 	this->oSvc->SuppClient(int::Parse(this->textBox1->Text));
 	}
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
+	this->oSvc->ModifierClient(int::Parse(this->textBox1->Text), this->textBox2->Text, this->textBox3->Text, this->textBox4->Text, int::Parse(this->textBox13->Text));
+}
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {

@@ -16,7 +16,7 @@ System::String^ NS_Comp_Client::CmapClient::Delete()
 
 System::String^ NS_Comp_Client::CmapClient::Update()
 {
-	return "UPDATE Client SET Nom = '" + this->nom + "', Prenom ='" + this->prenom + "', Date ='" + this->date + "'";
+	return "UPDATE Client SET nom = '" + this->nom + "', prenom ='" + this->prenom + "', date_naissance ='" + this->date + "', IdAd ='"+this->IdAd+"' WHERE IdClient = '"+this->Id+"'";
 }
 
 void NS_Comp_Client::CmapClient::setId(int id)

@@ -10,6 +10,8 @@ namespace NS_Comp_Art
 		System::String^ nom;
 		int quantite;
 		float montant;
+		int TVA;
+		int Seuil;
 	public:
 		System::String^ Select(void);
 		System::String^ Insert(void);
@@ -23,6 +25,10 @@ namespace NS_Comp_Art
 		int getQuantite();
 		void setMontant(float);
 		float getMontant();
+		int getTVA();
+		void setTVA(int);
+		int getSeuil();
+		void setSeuil(int);
 	};
 }
 

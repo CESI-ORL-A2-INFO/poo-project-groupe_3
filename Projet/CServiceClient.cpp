@@ -26,13 +26,13 @@ void NS_Svc_Client::CServiceClient::AjouterClient(System::String^ nom, System::S
 	this->oCad->actionRows(sql);
 }
 
-void NS_Svc_Client::CServiceClient::ModifierClient(int Id, System::String^ date, System::String^ nom, System::String^ prenom, int IdAdresse)
+void NS_Svc_Client::CServiceClient::ModifierClient(int Id, System::String^ nom, System::String^ prenom, System::String^ date, int IdAdresse)
 {
 	System::String^ sql;
 	this->oMappClient->setId(Id);
-	this->oMappClient->setDate(date);
 	this->oMappClient->setNom(nom);
 	this->oMappClient->setPrenom(prenom);
+	this->oMappClient->setDate(date);
 	this->oMappClient->setIdAd(IdAdresse);
 
 	sql = this->oMappClient->Update();
