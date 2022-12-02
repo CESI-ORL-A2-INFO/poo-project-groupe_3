@@ -14,6 +14,7 @@ namespace NS_Comp_Pers
 		int IdAdresse;
 	public:
 		System::String^ Select(void);
+		System::String^ SelectId(void);
 		System::String^ Insert(void);
 		System::String^ Delete(void);
 		System::String^ Update(void);

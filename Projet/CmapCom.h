@@ -13,6 +13,7 @@ namespace NS_Comp_Com
 		int IdClient;
 	public:
 		System::String^ Select(void);
+		System::String^ SelectRef(void);
 		System::String^ Insert(void);
 		System::String^ Delete(void);
 		System::String^ Update(void);

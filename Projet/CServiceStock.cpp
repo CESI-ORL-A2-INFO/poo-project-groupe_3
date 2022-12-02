@@ -13,7 +13,15 @@ System::Data::DataSet^ NS_Svc_Stock::CServiceStock::SelectionnerToutStock(System
 	return this->oCad->getRows(sql, NomTable);
 }
 
-void NS_Svc_Stock::CServiceStock::AjouterArticle(System::String^ ref , System::String^ nom , int quantite, float montant, int tva, int seuil)
+System::Data::DataSet^ NS_Svc_Stock::CServiceStock::SelectionnerStock(System::String^ NomTable, System::String^ Ref)
+{
+	System::String^ sql;
+	this->oMappStock->setRef(Ref);
+	sql = this->oMappStock->SelectRef();
+	return this->oCad->getRows(sql, NomTable);
+}
+
+void NS_Svc_Stock::CServiceStock::AjouterArticle(System::String^ ref , System::String^ nom , int quantite, System::String^ montant, int tva, int seuil)
 {
 	System::String^ sql;
 	
@@ -28,7 +36,7 @@ void NS_Svc_Stock::CServiceStock::AjouterArticle(System::String^ ref , System::S
 }
 
 
-void NS_Svc_Stock::CServiceStock::ModifierArticle(System::String^ Reference, System::String^ nom, int quantite, float montant, int tva, int seuil)
+void NS_Svc_Stock::CServiceStock::ModifierArticle(System::String^ Reference, System::String^ nom, int quantite, System::String^ montant, int tva, int seuil)
 {
 	System::String^ sql;
 

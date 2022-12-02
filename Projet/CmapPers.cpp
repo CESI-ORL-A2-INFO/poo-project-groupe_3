@@ -5,6 +5,11 @@ System::String^ NS_Comp_Pers::CmapPers::Select()
 	return "SELECT [IdPersonnel],[nom],[prenom],[date_embauche],[IdPersonnel_1],[CP],[IdAd] FROM [Personnel] INNER JOIN Adresse ON Personnel.IdAd = Adresse.IdAdresse";
 }
 
+System::String^ NS_Comp_Pers::CmapPers::SelectId()
+{
+	return "SELECT [IdPersonnel],[nom],[prenom],[date_embauche],[IdPersonnel_1],[CP],[IdAd] FROM [Personnel] INNER JOIN Adresse ON Personnel.IdAd = Adresse.IdAdresse WHERE IdPersonnel = '"+this->Id+"'";
+}
+
 System::String^ NS_Comp_Pers::CmapPers::Insert()
 {
 	return "INSERT INTO Personnel (nom, prenom, date_embauche, IdPersonnel_1, Personnel.IdAd) VALUES ('" + this->nom + "','" + this->prenom + "','" + this->date + "','" + this->IdSup + "','" + this->IdAdresse + "');";

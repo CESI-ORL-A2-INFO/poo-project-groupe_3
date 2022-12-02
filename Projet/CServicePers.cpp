@@ -19,6 +19,14 @@ System::Data::DataSet^ NS_Svc_Pers::CServicePers::SelectionnerToutPersonnel(Syst
 	return this->oCad->getRows(sql, NomTable);
 }
 
+System::Data::DataSet^ NS_Svc_Pers::CServicePers::SelectionnerPersonnel(System::String^ NomTable, int Id)
+{
+	System::String^ sql;
+	this->oMappPers->setId(Id);
+	sql = this->oMappPers->SelectId();
+	return this->oCad->getRows(sql, NomTable);
+}
+
 void NS_Svc_Pers::CServicePers::AjouterPersonnel(System::String^ nom, System::String^ prenom, System::String^ date, int IdSup, int IdAdresse )
 {
 	System::String^ sql;

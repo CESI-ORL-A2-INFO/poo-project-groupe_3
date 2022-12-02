@@ -4,6 +4,11 @@ System::String^ NS_Comp_Client::CmapClient::Select()
 	return "SELECT [IdClient],[nom],[prenom],[date_naissance], [IdAd] FROM [Client]";
 }
 
+System::String^ NS_Comp_Client::CmapClient::SelectId()
+{
+	return "SELECT [IdClient],[nom],[prenom],[date_naissance], [IdAd] FROM [Client] WHERE IdClient = '"+this->Id+"'";
+}
+
 System::String^ NS_Comp_Client::CmapClient::Insert()
 {
 	return "INSERT INTO Client (nom, prenom, date_naissance, Client.IdAd) VALUES ('" + this->nom + "','" + this->prenom + "','" + this->date + "','" + this->IdAd + "');";

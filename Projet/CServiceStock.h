@@ -11,8 +11,9 @@ namespace NS_Svc_Stock
 	public:
 		CServiceStock();
 		System::Data::DataSet^ SelectionnerToutStock(System::String^);
-		void AjouterArticle(System::String^, System::String^, int, float, int, int);
-		void ModifierArticle(System::String^,System::String^, int, float, int, int);
+		System::Data::DataSet^ SelectionnerStock(System::String^, System::String^);
+		void AjouterArticle(System::String^, System::String^, int, System::String^, int, int);
+		void ModifierArticle(System::String^,System::String^, int, System::String^, int, int);
 		void SuppArticle(System::String^);
 	};
 }

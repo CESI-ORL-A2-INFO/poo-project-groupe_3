@@ -2,7 +2,12 @@
 
 System::String^ NS_Comp_Com::CmapCom::Select()
 {
-	return "SELECT [RefCommande], [date_reglement], [date_emission],[date_livraison],[IdClient] FROM [Commande]";
+	return "SELECT * FROM [Commande]";
+}
+
+System::String^ NS_Comp_Com::CmapCom::SelectRef()
+{
+	return "SELECT * FROM [Commande] WHERE RefCommande = '"+this->Reference+"'";
 }
 
 System::String^ NS_Comp_Com::CmapCom::Insert()

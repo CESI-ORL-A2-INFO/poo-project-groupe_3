@@ -5,6 +5,11 @@ System::String^ NS_Comp_Art::CmapArticle::Select()
 	return "SELECT [RefArticle], [Nom], [Quantite], [Montant] FROM Article";
 }
 
+System::String^ NS_Comp_Art::CmapArticle::SelectRef()
+{
+	return "SELECT [RefArticle], [Nom], [Quantite], [Montant] FROM Article WHERE RefArticle = '"+this->Reference+"'";
+}
+
 System::String^ NS_Comp_Art::CmapArticle::Insert()
 {
 	return "INSERT INTO Article (RefArticle, Nom, Quantite, Montant) VALUES('" + this->Reference + "','" + this->nom + "','" + this->quantite + "','" + this->montant + "');";
@@ -36,7 +41,7 @@ void NS_Comp_Art::CmapArticle::setQuantite(int quantite)
 	this->quantite = quantite;
 }
 
-void NS_Comp_Art::CmapArticle::setMontant(float Montant)
+void NS_Comp_Art::CmapArticle::setMontant(System::String^ Montant)
 {
 	this->montant = Montant;
 }
@@ -65,7 +70,7 @@ int NS_Comp_Art::CmapArticle::getQuantite()
 	return this->quantite;
 }
 
-float NS_Comp_Art::CmapArticle::getMontant()
+System::String^ NS_Comp_Art::CmapArticle::getMontant()
 {
 	return this->montant;
 }

@@ -50,6 +50,7 @@ namespace Projet {
 	private: System::Windows::Forms::TextBox^ textBox5;
 	private: NS_Svc_Stock::CServiceStock^ oSvc;
 	private: System::Data::DataSet^ oDs;
+	private: System::Data::DataSet^ DataStock;
 	protected:
 		
 	private:
@@ -189,6 +190,7 @@ namespace Projet {
 			this->button3->TabIndex = 43;
 			this->button3->Text = L"Afficher Stock";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &Form5::button3_Click);
 			// 
 			// button2
 			// 
@@ -253,17 +255,28 @@ namespace Projet {
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->oSvc->AjouterArticle(this->textBox1->Text, this->textBox2->Text, int::Parse(this->textBox3->Text), float::Parse(this->textBox4->Text), int::Parse(this->textBox13->Text), int::Parse(this->textBox5->Text)); //System::String ^ nom, int quantite, float montant, int tva, int seuil
+	this->oSvc->AjouterArticle(this->textBox1->Text, this->textBox2->Text, int::Parse(this->textBox3->Text), this->textBox4->Text, int::Parse(this->textBox13->Text), int::Parse(this->textBox5->Text)); //System::String ^ nom, int quantite, float montant, int tva, int seuil
 }
 private: System::Void textBox13_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void textBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->oSvc->ModifierArticle(this->textBox1->Text, this->textBox2->Text, int::Parse(this->textBox3->Text), float::Parse(this->textBox4->Text), int::Parse(this->textBox13->Text), int::Parse(this->textBox5->Text));
+	this->oSvc->ModifierArticle(this->textBox1->Text, this->textBox2->Text, int::Parse(this->textBox3->Text), this->textBox4->Text, int::Parse(this->textBox13->Text), int::Parse(this->textBox5->Text));
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->oSvc->SuppArticle(this->textBox1->Text);
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->DataStock = this->oSvc->SelectionnerStock("Article", this->textBox1->Text);
+	System::Data::DataTableReader^ ReadStock;
+	ReadStock = this->DataStock->CreateDataReader();
+	ReadStock->Read();
+	this->textBox2->Text = ReadStock->GetValue(1)->ToString();
+	this->textBox3->Text = ReadStock->GetValue(2)->ToString();
+	this->textBox4->Text = ReadStock->GetValue(3)->ToString();
+	//this->textBox13->Text = ReadPers->GetValue(4)->ToString();
+	//this->textBox5->Text = ReadPers->GetValue(5)->ToString();
 }
 };
 }

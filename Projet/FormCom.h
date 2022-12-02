@@ -52,6 +52,7 @@ namespace Projet {
 	private: System::Windows::Forms::Label^ label2;
 	private: NS_Svc_Com::CServiceCom^ oSvc;
 	private: System::Data::DataSet^ oDs;
+	private: System::Data::DataSet^ DataCom;
 	protected:
 
 	private:
@@ -134,6 +135,7 @@ namespace Projet {
 			this->button3->TabIndex = 24;
 			this->button3->Text = L"Afficher Commande";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &Form4::button3_Click);
 			// 
 			// button2
 			// 
@@ -280,6 +282,16 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->oSvc->ModifierCommande(this->textBox1->Text, this->textBox2->Text, this->textBox3->Text, this->textBox4->Text, int::Parse(this->textBox5->Text));
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->DataCom = this->oSvc->SelectionnerCommande("Commande", this->textBox1->Text);
+	System::Data::DataTableReader^ ReadCom;
+	ReadCom = this->DataCom->CreateDataReader();
+	ReadCom->Read();
+	this->textBox2->Text = ReadCom->GetValue(1)->ToString();
+	this->textBox3->Text = ReadCom->GetValue(2)->ToString();
+	this->textBox4->Text = ReadCom->GetValue(3)->ToString();
+	this->textBox5->Text = ReadCom->GetValue(4)->ToString();
 }
 };
 }

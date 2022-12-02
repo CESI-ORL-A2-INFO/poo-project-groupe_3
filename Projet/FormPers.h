@@ -54,6 +54,7 @@ namespace Projet {
 	private: System::Windows::Forms::Label^ label2;
 	private: NS_Svc_Pers::CServicePers^ oSvc;
 	private: System::Data::DataSet^ oDs;
+	private: System::Data::DataSet^ DataPers;
 	private: System::Windows::Forms::TextBox^ textBox10;
 	protected:
 
@@ -130,6 +131,7 @@ namespace Projet {
 			this->button3->TabIndex = 3;
 			this->button3->Text = L"Afficher Personnel";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &Form2::button3_Click);
 			// 
 			// button4
 			// 
@@ -317,6 +319,21 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 	this->oSvc->SuppPersonnel(int::Parse(this->textBox1->Text));
 }
 private: System::Void textBox10_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (!this->textBox1->Text->Equals(""))
+	{
+		this->DataPers = this->oSvc->SelectionnerPersonnel("Personnel", int::Parse(this->textBox1->Text));
+		System::Data::DataTableReader^ ReadPers;
+		ReadPers = this->DataPers->CreateDataReader();
+		ReadPers->Read();
+		this->textBox2->Text = ReadPers->GetValue(1)->ToString();
+		this->textBox3->Text = ReadPers->GetValue(2)->ToString();
+		this->textBox4->Text = ReadPers->GetValue(3)->ToString();
+		this->textBox5->Text = ReadPers->GetValue(4)->ToString();
+		this->textBox10->Text = ReadPers->GetValue(5)->ToString();
+
+	}
 }
 };
 }

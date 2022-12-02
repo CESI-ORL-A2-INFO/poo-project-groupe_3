@@ -13,6 +13,14 @@ System::Data::DataSet^ NS_Svc_Com::CServiceCom::SelectionnerToutCommande(System:
 	return this->oCad->getRows(sql, NomTable);
 }
 
+System::Data::DataSet^ NS_Svc_Com::CServiceCom::SelectionnerCommande(System::String^ NomTable, System::String^ Ref)
+{
+	System::String^ sql;
+	this->oMappCom->setRef(Ref);
+	sql = this->oMappCom->Select();
+	return this->oCad->getRows(sql, NomTable);
+}
+
 void NS_Svc_Com::CServiceCom::AjouterCommande(System::String^ RefCommande, System::String^ reg, System::String^ emi, System::String^ liv, int IdClient)
 {
 	System::String^ sql;

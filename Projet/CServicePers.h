@@ -12,7 +12,7 @@ namespace NS_Svc_Pers
 	public:
 		CServicePers(void);
 		System::Data::DataSet^ SelectionnerToutPersonnel(System::String^);
-		//System::Data::DataSet^ SelectionnerPersonnel(int);
+		System::Data::DataSet^ SelectionnerPersonnel(System::String^, int);
 		void AjouterPersonnel(System::String^, System::String^, System::String^ , int, int);
 		void ModifierPersonnel(int, System::String^, System::String^, System::String^, int, int);
 		// RefArticle -- Nom -- Quantite -- Montant - IdTva -- IdSeuil

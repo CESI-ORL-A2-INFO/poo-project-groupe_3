@@ -60,6 +60,7 @@ namespace Projet {
 	private: System::Windows::Forms::TextBox^ textBox12;
 	private: System::ComponentModel::IContainer^ components;
 	private: NS_Svc_Client::CServiceClient^ oSvc;
+	private: System::Data::DataSet^ DataClient;
 
 	private: System::Windows::Forms::TextBox^ textBox13;
 	private: System::Data::DataSet^ oDs;
@@ -368,6 +369,14 @@ namespace Projet {
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->DataClient = this->oSvc->SelectionnerClient("Client", int::Parse(this->textBox1->Text));
+	System::Data::DataTableReader^ ReadClient;
+	ReadClient = this->DataClient->CreateDataReader();
+	ReadClient->Read();
+	this->textBox2->Text = ReadClient->GetValue(1)->ToString();
+	this->textBox3->Text = ReadClient->GetValue(2)->ToString();
+	this->textBox4->Text = ReadClient->GetValue(3)->ToString();
+	this->textBox13->Text = ReadClient->GetValue(4)->ToString();
 	}
 private: System::Void textBox9_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
