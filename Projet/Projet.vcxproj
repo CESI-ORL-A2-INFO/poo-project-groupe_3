@@ -131,10 +131,12 @@
     <ClCompile Include="CmapPayer.cpp" />
     <ClCompile Include="CmapPers.cpp" />
     <ClCompile Include="CmapSeuil.cpp" />
+    <ClCompile Include="CmapStat.cpp" />
     <ClCompile Include="CmapTVA.cpp" />
     <ClCompile Include="CServiceClient.cpp" />
     <ClCompile Include="CServiceCom.cpp" />
     <ClCompile Include="CServicePers.cpp" />
+    <ClCompile Include="CServiceStat.cpp" />
     <ClCompile Include="CServiceStock.cpp" />
     <ClCompile Include="FormPers.cpp" />
     <ClCompile Include="FormClient.cpp" />
@@ -156,10 +158,12 @@
     <ClInclude Include="CmapPayer.h" />
     <ClInclude Include="CmapPers.h" />
     <ClInclude Include="CmapSeuil.h" />
+    <ClInclude Include="CmapStat.h" />
     <ClInclude Include="CmapTVA.h" />
     <ClInclude Include="CServiceClient.h" />
     <ClInclude Include="CServiceCom.h" />
     <ClInclude Include="CServicePers.h" />
+    <ClInclude Include="CServiceStat.h" />
     <ClInclude Include="CServiceStock.h" />
     <ClInclude Include="FormPers.h">
       <FileType>CppForm</FileType>

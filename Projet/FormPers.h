@@ -112,6 +112,7 @@ namespace Projet {
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->Size = System::Drawing::Size(683, 161);
 			this->dataGridView1->TabIndex = 1;
+			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Form2::dataGridView1_CellContentClick);
 			// 
 			// button2
 			// 
@@ -334,6 +335,8 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		this->textBox10->Text = ReadPers->GetValue(5)->ToString();
 
 	}
+}
+private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
 };
 }
