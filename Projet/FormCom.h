@@ -53,6 +53,8 @@ namespace Projet {
 	private: NS_Svc_Com::CServiceCom^ oSvc;
 	private: System::Data::DataSet^ oDs;
 	private: System::Data::DataSet^ DataCom;
+	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::ComboBox^ comboBox2;
 	protected:
 
 	private:
@@ -84,6 +86,8 @@ namespace Projet {
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -207,7 +211,7 @@ namespace Projet {
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(555, 265);
+			this->textBox6->Location = System::Drawing::Point(687, 281);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(100, 20);
 			this->textBox6->TabIndex = 35;
@@ -215,7 +219,7 @@ namespace Projet {
 			// 
 			// textBox7
 			// 
-			this->textBox7->Location = System::Drawing::Point(555, 291);
+			this->textBox7->Location = System::Drawing::Point(687, 336);
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(100, 20);
 			this->textBox7->TabIndex = 36;
@@ -224,17 +228,39 @@ namespace Projet {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(575, 239);
+			this->label2->Location = System::Drawing::Point(580, 239);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(50, 13);
+			this->label2->Size = System::Drawing::Size(51, 13);
 			this->label2->TabIndex = 37;
-			this->label2->Text = L"paiement";
+			this->label2->Text = L"Paiement";
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Carte Bancaire", L"Paypal", L"Virement" });
+			this->comboBox1->Location = System::Drawing::Point(546, 280);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(121, 21);
+			this->comboBox1->TabIndex = 38;
+			this->comboBox1->Text = L"Moyen de paiement";
+			// 
+			// comboBox2
+			// 
+			this->comboBox2->FormattingEnabled = true;
+			this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"1 ", L"2", L"3", L"4" });
+			this->comboBox2->Location = System::Drawing::Point(546, 343);
+			this->comboBox2->Name = L"comboBox2";
+			this->comboBox2->Size = System::Drawing::Size(121, 21);
+			this->comboBox2->TabIndex = 39;
+			this->comboBox2->Text = L"Nombre paiement";
 			// 
 			// Form4
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(799, 442);
+			this->Controls->Add(this->comboBox2);
+			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->textBox7);
 			this->Controls->Add(this->textBox6);

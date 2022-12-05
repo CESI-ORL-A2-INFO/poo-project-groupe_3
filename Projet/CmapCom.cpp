@@ -2,12 +2,12 @@
 
 System::String^ NS_Comp_Com::CmapCom::Select()
 {
-	return "SELECT * FROM [Commande]";
+	return "SELECT [RefCommande],[date_reglement],[date_emission], [date_livraison], [IdClient], [RefArt] FROM [Commande] INNER JOIN contient ON Commande.RefCommande = contient.RefCom";
 }
 
 System::String^ NS_Comp_Com::CmapCom::SelectRef()
 {
-	return "SELECT * FROM [Commande] WHERE RefCommande = '"+this->Reference+"'";
+	return "SELECT [RefCommande],[date_reglement],[date_emission], [date_livraison], [IdClient], [RefArt] FROM [Commande] WHERE RefCommande = '"+this->Reference+"'INNER JOIN contient ON Commande.RefCommande = contient.RefCommande";
 }
 
 System::String^ NS_Comp_Com::CmapCom::Insert()

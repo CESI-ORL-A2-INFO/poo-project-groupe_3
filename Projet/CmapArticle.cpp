@@ -2,7 +2,7 @@
 
 System::String^ NS_Comp_Art::CmapArticle::Select()
 {
-	return "SELECT [RefArticle], [Nom], [Quantite], [Montant] FROM Article";
+	return "SELECT [RefArticle], [Nom], [Quantite], [Montant], [IdTVA] as Tva, [IdSeuil] as Seuil FROM Article ";
 }
 
 System::String^ NS_Comp_Art::CmapArticle::SelectRef()
@@ -12,7 +12,7 @@ System::String^ NS_Comp_Art::CmapArticle::SelectRef()
 
 System::String^ NS_Comp_Art::CmapArticle::Insert()
 {
-	return "INSERT INTO Article (RefArticle, Nom, Quantite, Montant) VALUES('" + this->Reference + "','" + this->nom + "','" + this->quantite + "','" + this->montant + "');";
+	return "INSERT INTO Article (RefArticle, Nom, Quantite, Montant, IdTVA, IdSeuil) VALUES('" + this->Reference + "','" + this->nom + "','" + this->quantite + "','" + this->montant + "','"+this->TVA+"','"+this->Seuil+"');";
 }
 
 System::String^ NS_Comp_Art::CmapArticle::Delete()
@@ -22,7 +22,7 @@ System::String^ NS_Comp_Art::CmapArticle::Delete()
 
 System::String^ NS_Comp_Art::CmapArticle::Update()
 {
-	return "UPDATE Article SET Nom = '"+this->nom+"', Quantite = '"+this->quantite+"', Montant = '"+this->montant+"' WHERE RefArticle = '"+this->Reference+"'";
+	return "UPDATE Article SET Nom = '"+this->nom+"', Quantite = '"+this->quantite+"', Montant = '"+this->montant+"', IdTVA = '"+this->TVA+"', IdSeuil = '"+this->Seuil+"' WHERE RefArticle = '"+this->Reference+"'";
 }
 
 

@@ -36,7 +36,7 @@ namespace Projet {
 		}
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
-	private: System::Windows::Forms::TextBox^ textBox13;
+
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::TextBox^ textBox4;
 	private: System::Windows::Forms::TextBox^ textBox3;
@@ -47,12 +47,13 @@ namespace Projet {
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::TextBox^ textBox5;
+
 	private: NS_Svc_Stock::CServiceStock^ oSvc;
 	private: System::Data::DataSet^ oDs;
 	private: System::Data::DataSet^ DataStock;
-	private: System::Windows::Forms::ComboBox^ TVAbox;
+
 	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::ComboBox^ comboBox2;
 
 	protected:
 		
@@ -71,7 +72,6 @@ namespace Projet {
 		{
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->textBox13 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
@@ -82,9 +82,8 @@ namespace Projet {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->TVAbox = (gcnew System::Windows::Forms::ComboBox());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -106,15 +105,6 @@ namespace Projet {
 			this->dataGridView1->Size = System::Drawing::Size(649, 207);
 			this->dataGridView1->TabIndex = 1;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Form5::dataGridView1_CellContentClick);
-			// 
-			// textBox13
-			// 
-			this->textBox13->Location = System::Drawing::Point(487, 322);
-			this->textBox13->Name = L"textBox13";
-			this->textBox13->Size = System::Drawing::Size(100, 20);
-			this->textBox13->TabIndex = 52;
-			this->textBox13->Text = L"TVA";
-			this->textBox13->TextChanged += gcnew System::EventHandler(this, &Form5::textBox13_TextChanged);
 			// 
 			// label1
 			// 
@@ -207,47 +197,34 @@ namespace Projet {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &Form5::button2_Click);
 			// 
-			// textBox5
-			// 
-			this->textBox5->Location = System::Drawing::Point(487, 348);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(100, 20);
-			this->textBox5->TabIndex = 53;
-			this->textBox5->Text = L"Seuil";
-			this->textBox5->TextChanged += gcnew System::EventHandler(this, &Form5::textBox5_TextChanged);
-			// 
-			// TVAbox
-			// 
-			this->TVAbox->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->TVAbox->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->TVAbox->FormattingEnabled = true;
-			this->TVAbox->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"5 %", L"10 %", L"15 % ", L"20 %" });
-			this->TVAbox->Location = System::Drawing::Point(487, 262);
-			this->TVAbox->Name = L"TVAbox";
-			this->TVAbox->Size = System::Drawing::Size(121, 21);
-			this->TVAbox->TabIndex = 54;
-			this->TVAbox->Text = L"TVA";
-			this->TVAbox->SelectedIndexChanged += gcnew System::EventHandler(this, &Form5::TVAbox_SelectedIndexChanged);
-			// 
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"5", L"7", L"10", L"12", L"15" });
-			this->comboBox1->Location = System::Drawing::Point(487, 289);
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"5", L"8", L"10", L"12", L"15" });
+			this->comboBox1->Location = System::Drawing::Point(487, 324);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(121, 21);
 			this->comboBox1->TabIndex = 55;
 			this->comboBox1->Text = L"Seuil";
+			// 
+			// comboBox2
+			// 
+			this->comboBox2->FormattingEnabled = true;
+			this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"5%", L"10%", L"15%", L"20%" });
+			this->comboBox2->Location = System::Drawing::Point(487, 287);
+			this->comboBox2->Name = L"comboBox2";
+			this->comboBox2->Size = System::Drawing::Size(121, 21);
+			this->comboBox2->TabIndex = 56;
+			this->comboBox2->Text = L"TVA";
+			this->comboBox2->SelectedIndexChanged += gcnew System::EventHandler(this, &Form5::comboBox2_SelectedIndexChanged);
 			// 
 			// Form5
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(673, 421);
+			this->Controls->Add(this->comboBox2);
 			this->Controls->Add(this->comboBox1);
-			this->Controls->Add(this->TVAbox);
-			this->Controls->Add(this->textBox5);
-			this->Controls->Add(this->textBox13);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->textBox4);
 			this->Controls->Add(this->textBox3);
@@ -285,14 +262,14 @@ namespace Projet {
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->oSvc->AjouterArticle(this->textBox1->Text, this->textBox2->Text, int::Parse(this->textBox3->Text), this->textBox4->Text, int::Parse(this->textBox13->Text), int::Parse(this->textBox5->Text)); //System::String ^ nom, int quantite, float montant, int tva, int seuil
+	this->oSvc->AjouterArticle(this->textBox1->Text, this->textBox2->Text, int::Parse(this->textBox3->Text), this->textBox4->Text, (int)(this->comboBox2->SelectedIndex + 1), (int)(this->comboBox1->SelectedIndex + 1)); //System::String ^ nom, int quantite, float montant, int tva, int seuil
 }
 private: System::Void textBox13_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void textBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->oSvc->ModifierArticle(this->textBox1->Text, this->textBox2->Text, int::Parse(this->textBox3->Text), this->textBox4->Text, int::Parse(this->textBox13->Text), int::Parse(this->textBox5->Text));
+	this->oSvc->ModifierArticle(this->textBox1->Text, this->textBox2->Text, int::Parse(this->textBox3->Text), this->textBox4->Text, (int)(this->comboBox2->SelectedIndex + 1), (int)(this->comboBox1->SelectedIndex + 1));
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->oSvc->SuppArticle(this->textBox1->Text);
@@ -308,9 +285,9 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	//this->textBox13->Text = ReadPers->GetValue(4)->ToString();
 	//this->textBox5->Text = ReadPers->GetValue(5)->ToString();
 }
-private: System::Void menuStrip1_ItemClicked(System::Object^ sender, System::Windows::Forms::ToolStripItemClickedEventArgs^ e) {
-}
 private: System::Void TVAbox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void comboBox2_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
