@@ -12,6 +12,8 @@ namespace NS_Svc_Client
 		CServiceClient(void);
 		System::Data::DataSet^ SelectionnerToutClient(System::String^);
 		System::Data::DataSet^ SelectionnerClient(System::String^, int);
+		System::Data::DataSet^ SelectionnerFactureLiv(System::String^, int);
+		System::Data::DataSet^ SelectionnerFactureFac(System::String^, int);
 		void AjouterClient(System::String^, System::String^, System::String^, int);
 		void ModifierClient(int, System::String^, System::String^, System::String^,int);
 		void SuppClient(int);

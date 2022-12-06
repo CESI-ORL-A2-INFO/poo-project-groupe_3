@@ -13,9 +13,11 @@ System::Data::DataSet^ NS_Svc_Stat::CServiceStat::AffichagePanierMoyen(System::S
 	return this->oCad->getRows(sql, Nom);
 }
 
-System::Data::DataSet^ NS_Svc_Stat::CServiceStat::AffichageChiffreAffaire(System::String^ Nom)
+System::Data::DataSet^ NS_Svc_Stat::CServiceStat::AffichageChiffreAffaire(System::String^ Nom, System::String^ mois, System::String^ annee)
 {
 	System::String^ sql;
+	this->oMappStat->setMois(mois);
+	this->oMappStat->setAnnee(annee);
 	sql = this->oMappStat->ChiffreAffaire();
 	return this->oCad->getRows(sql, Nom);
 }
@@ -27,9 +29,10 @@ System::Data::DataSet^ NS_Svc_Stat::CServiceStat::AffichageReapp(System::String^
 	return this->oCad->getRows(sql, Nom);
 }
 
-System::Data::DataSet^ NS_Svc_Stat::CServiceStat::AffichageMontantClient(System::String^ Nom)
+System::Data::DataSet^ NS_Svc_Stat::CServiceStat::AffichageMontantClient(System::String^ Nom, int Id)
 {
 	System::String^ sql;
+	this->oMappStat->setId(Id);
 	sql = this->oMappStat->MontantClient();
 	return this->oCad->getRows(sql, Nom);
 }

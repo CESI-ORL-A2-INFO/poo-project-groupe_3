@@ -17,6 +17,8 @@ namespace NS_Comp_Client
 		System::String^ Insert(void);
 		System::String^ Delete(void);
 		System::String^ Update(void);
+		System::String^ FactureLiv(void);
+		System::String^ FactureFac(void);
 		void setId(int);
 		int getId();
 		void setNom(System::String^);

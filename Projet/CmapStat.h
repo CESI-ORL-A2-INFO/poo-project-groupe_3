@@ -5,7 +5,8 @@ namespace NS_Comp_Stat
 	{
 	private:
 		int IdClient;
-		System::String^ date;
+		System::String^ mois;
+		System::String^ annee;
 	public:
 		System::String^ PanierMoyen(void);
 		System::String^ ChiffreAffaire(void);
@@ -16,8 +17,10 @@ namespace NS_Comp_Stat
 		System::String^ ValeurStock(void);
 		int getId(void);
 		void setId(int);
-		System::String^ getDate(void);
-		void setDate(System::String^);
+		System::String^ getMois(void);
+		void setMois(System::String^);
+		System::String^ getAnnee(void);
+		void setAnnee(System::String^);
 	};
 }
 

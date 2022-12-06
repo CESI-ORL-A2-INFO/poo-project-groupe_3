@@ -12,9 +12,9 @@ namespace NS_Svc_Stat
 	public:
 		CServiceStat(void);
 		System::Data::DataSet^ AffichagePanierMoyen(System::String^);
-		System::Data::DataSet^ AffichageChiffreAffaire(System::String^);
+		System::Data::DataSet^ AffichageChiffreAffaire(System::String^, System::String^, System::String^);
 		System::Data::DataSet^ AffichageReapp(System::String^);
-		System::Data::DataSet^ AffichageMontantClient(System::String^);
+		System::Data::DataSet^ AffichageMontantClient(System::String^, int );
 		System::Data::DataSet^ AffichagePlusVendus(System::String^);
 		System::Data::DataSet^ AffichageMoinsVendus(System::String^);
 		System::Data::DataSet^ AffichageValeurStock(System::String^);

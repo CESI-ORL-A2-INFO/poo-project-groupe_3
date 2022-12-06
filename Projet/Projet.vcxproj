@@ -138,12 +138,12 @@
     <ClCompile Include="CServicePers.cpp" />
     <ClCompile Include="CServiceStat.cpp" />
     <ClCompile Include="CServiceStock.cpp" />
+    <ClCompile Include="Form6.cpp" />
     <ClCompile Include="FormPers.cpp" />
     <ClCompile Include="FormClient.cpp" />
     <ClCompile Include="FormCom.cpp" />
     <ClCompile Include="FormStat.cpp" />
     <ClCompile Include="FormStock.cpp" />
-    <ClCompile Include="FormFacture.cpp" />
     <ClCompile Include="MyForm.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +165,9 @@
     <ClInclude Include="CServicePers.h" />
     <ClInclude Include="CServiceStat.h" />
     <ClInclude Include="CServiceStock.h" />
+    <ClInclude Include="Form6.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="FormPers.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -180,9 +183,6 @@
     <ClInclude Include="FormStock.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="FormFacture.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -195,6 +195,9 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form6.resx">
+      <DependentUpon>Form6.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPers.resx">
       <DependentUpon>FormPers.h</DependentUpon>
     </EmbeddedResource>
@@ -209,9 +212,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormStock.resx">
       <DependentUpon>FormStock.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormFacture.resx">
-      <DependentUpon>FormFacture.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>

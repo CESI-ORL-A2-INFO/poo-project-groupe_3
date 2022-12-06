@@ -21,6 +21,23 @@ System::Data::DataSet^ NS_Svc_Client::CServiceClient::SelectionnerClient(System:
 	return this->oCad->getRows(sql, NomTable);
 }
 
+System::Data::DataSet^ NS_Svc_Client::CServiceClient::SelectionnerFactureLiv(System::String^ NomTable, int id)
+{
+	System::String^ sql;
+	this->oMappClient->setId(id);
+	sql = this->oMappClient->FactureLiv();
+	return this->oCad->getRows(sql, NomTable);
+}
+
+System::Data::DataSet^ NS_Svc_Client::CServiceClient::SelectionnerFactureLiv(System::String^ NomTable, int id)
+{
+	System::String^ sql;
+	this->oMappClient->setId(id);
+	sql = this->oMappClient->FactureFac();
+	return this->oCad->getRows(sql, NomTable);
+}
+
+
 void NS_Svc_Client::CServiceClient::AjouterClient(System::String^ nom, System::String^ prenom, System::String^ date, int IdAdresse)
 {
 	System::String^ sql;

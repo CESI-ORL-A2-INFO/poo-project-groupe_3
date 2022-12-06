@@ -40,7 +40,20 @@ namespace Projet {
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: NS_Svc_Stat::CServiceStat^ oSvc;
 	private: System::Data::DataSet^ oDs;
+	private: System::Data::DataSet^ PanierMoyen;
+	private: System::Data::DataSet^ ChiffreAffaire;
+	private: System::Data::DataSet^ Reapp;
+	private: System::Data::DataSet^ MontantClient;
+	private: System::Data::DataSet^ PlusVendus;
+	private: System::Data::DataSet^ MoinsVendus;
+	private: System::Data::DataSet^ ValeurStock;
 	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ textBox3;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label3;
 
 
 
@@ -68,6 +81,12 @@ namespace Projet {
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -97,7 +116,7 @@ namespace Projet {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(98, 124);
+			this->dataGridView1->Location = System::Drawing::Point(157, 116);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->Size = System::Drawing::Size(571, 309);
 			this->dataGridView1->TabIndex = 9;
@@ -113,11 +132,66 @@ namespace Projet {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &FormStat::button2_Click);
 			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(12, 178);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(100, 20);
+			this->textBox1->TabIndex = 11;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &FormStat::textBox1_TextChanged);
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(12, 162);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(45, 13);
+			this->label1->TabIndex = 12;
+			this->label1->Text = L"Id Client";
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(12, 228);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(100, 20);
+			this->textBox2->TabIndex = 13;
+			// 
+			// textBox3
+			// 
+			this->textBox3->Location = System::Drawing::Point(15, 285);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(100, 20);
+			this->textBox3->TabIndex = 14;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(12, 212);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(29, 13);
+			this->label2->TabIndex = 15;
+			this->label2->Text = L"Mois";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(12, 268);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(38, 13);
+			this->label3->TabIndex = 16;
+			this->label3->Text = L"Annee";
+			// 
 			// FormStat
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(798, 515);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->comboBox1);
@@ -127,6 +201,7 @@ namespace Projet {
 			this->Load += gcnew System::EventHandler(this, &FormStat::FormStat_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -144,54 +219,56 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	if (this->comboBox1->SelectedIndex + 1 == 1)
 	{
 		this->dataGridView1->Refresh();
-		this->oDs = this->oSvc->AffichagePanierMoyen("Article");
-		this->dataGridView1->DataSource = this->oDs;
+		this->PanierMoyen = this->oSvc->AffichagePanierMoyen("Article");
+		this->dataGridView1->DataSource = this->PanierMoyen;
 		this->dataGridView1->DataMember = "Article";
 	}
 	else if (this->comboBox1->SelectedIndex + 1 == 2)
 	{
 		this->dataGridView1->Refresh();
-		this->oDs = this->oSvc->AffichageChiffreAffaire("Article");
-		this->dataGridView1->DataSource = this->oDs;
+		this->ChiffreAffaire = this->oSvc->AffichageChiffreAffaire("Article",this->textBox2->Text, this->textBox3->Text);
+		this->dataGridView1->DataSource = this->ChiffreAffaire;
 		this->dataGridView1->DataMember = "Article";
 	}
 	else if (this->comboBox1->SelectedIndex + 1 == 3)
 	{
 		this->dataGridView1->Refresh();
-		this->oDs = this->oSvc->AffichageReapp("Article");
-		this->dataGridView1->DataSource = this->oDs;
+		this->Reapp = this->oSvc->AffichageReapp("Article");
+		this->dataGridView1->DataSource = this->Reapp;
 		this->dataGridView1->DataMember = "Article";
 	}
 	else if (this->comboBox1->SelectedIndex + 1 == 4)
 	{
 		this->dataGridView1->Refresh();
-		this->oDs = this->oSvc->AffichageMontantClient("Article");
-		this->dataGridView1->DataSource = this->oDs;
+		this->MontantClient = this->oSvc->AffichageMontantClient("Article", int::Parse(this->textBox1->Text));
+		this->dataGridView1->DataSource = this->MontantClient;
 		this->dataGridView1->DataMember = "Article";
 	}
 	else if (this->comboBox1->SelectedIndex + 1 == 5)
 	{
 		this->dataGridView1->Refresh();
-		this->oDs = this->oSvc->AffichagePlusVendus("Article");
-		this->dataGridView1->DataSource = this->oDs;
+		this->PlusVendus = this->oSvc->AffichagePlusVendus("Article");
+		this->dataGridView1->DataSource = this->PlusVendus;
 		this->dataGridView1->DataMember = "Article";
 	}
 	else if (this->comboBox1->SelectedIndex + 1 == 6)
 	{
 		this->dataGridView1->Refresh();
-		this->oDs = this->oSvc->AffichageMoinsVendus("Article");
-		this->dataGridView1->DataSource = this->oDs;
+		this->MoinsVendus = this->oSvc->AffichageMoinsVendus("Article");
+		this->dataGridView1->DataSource = this->MoinsVendus;
 		this->dataGridView1->DataMember = "Article";
 	}
 	else if (this->comboBox1->SelectedIndex + 1 == 7)
 	{
 		this->dataGridView1->Refresh();
-		this->oDs = this->oSvc->AffichageValeurStock("Article");
-		this->dataGridView1->DataSource = this->oDs;
+		this->ValeurStock = this->oSvc->AffichageValeurStock("Article");
+		this->dataGridView1->DataSource = this->ValeurStock;
 		this->dataGridView1->DataMember = "Article";
 	}
 }
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
+private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

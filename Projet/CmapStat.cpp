@@ -7,7 +7,7 @@ System::String^ NS_Comp_Stat::CmapStat::PanierMoyen()
 
 System::String^ NS_Comp_Stat::CmapStat::ChiffreAffaire()
 {
-	return "";
+	return "SELECT SUM(Prix) Prix_total FROM Paiement WHERE date_reglement = '%'" + this-> annee/*annee*/ + "'-'" + this->mois /*mois*/ + "'";
 }
 
 System::String^ NS_Comp_Stat::CmapStat::Reapp()
@@ -17,7 +17,7 @@ System::String^ NS_Comp_Stat::CmapStat::Reapp()
 
 System::String^ NS_Comp_Stat::CmapStat::MontantClient()
 {
-	return "";
+	return "SELECT SUM(Montant) From Article INNER JOIN Contient ON Article.RefArticle = Contient.RefArt INNER JOIN Commande ON  Commande.RefCommande = Contient.RefCom INNER JOIN Client ON Client.IdClient = Commande.IdClient WHERE Commande.IdClient = '" + this->IdClient + "'";
 }
 
 System::String^ NS_Comp_Stat::CmapStat::PlusVendus()
@@ -40,9 +40,14 @@ void NS_Comp_Stat::CmapStat::setId(int Id)
 	this->IdClient = Id;
 }
 
-void NS_Comp_Stat::CmapStat::setDate(System::String^ date)
+void NS_Comp_Stat::CmapStat::setMois(System::String^ mois)
 {
-	this->date = date;
+	this->mois = mois;
+}
+
+void NS_Comp_Stat::CmapStat::setAnnee(System::String^ mois)
+{
+	this->annee = annee;
 }
 
 int NS_Comp_Stat::CmapStat::getId()
@@ -50,7 +55,12 @@ int NS_Comp_Stat::CmapStat::getId()
 	return this->IdClient;
 }
 
-System::String^ NS_Comp_Stat::CmapStat::getDate()
+System::String^ NS_Comp_Stat::CmapStat::getMois()
 {
-	return this->date;
+	return this->mois;
+}
+
+System::String^ NS_Comp_Stat::CmapStat::getAnnee()
+{
+	return this->annee;
 }

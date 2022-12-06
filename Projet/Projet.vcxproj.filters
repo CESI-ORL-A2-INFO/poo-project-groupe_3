@@ -30,9 +30,6 @@
     <ClCompile Include="FormStock.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="FormFacture.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="Cadb.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -90,6 +87,9 @@
     <ClCompile Include="CServiceStat.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="Form6.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -105,9 +105,6 @@
       <Filter>Fichiers sources</Filter>
     </ClInclude>
     <ClInclude Include="FormStock.h">
-      <Filter>Fichiers sources</Filter>
-    </ClInclude>
-    <ClInclude Include="FormFacture.h">
       <Filter>Fichiers sources</Filter>
     </ClInclude>
     <ClInclude Include="Cadb.h">
@@ -166,6 +163,9 @@
     </ClInclude>
     <ClInclude Include="CServiceStat.h">
       <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Form6.h">
+      <Filter>Fichiers sources</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
