@@ -29,7 +29,7 @@ System::Data::DataSet^ NS_Svc_Client::CServiceClient::SelectionnerFactureLiv(Sys
 	return this->oCad->getRows(sql, NomTable);
 }
 
-System::Data::DataSet^ NS_Svc_Client::CServiceClient::SelectionnerFactureLiv(System::String^ NomTable, int id)
+System::Data::DataSet^ NS_Svc_Client::CServiceClient::SelectionnerFactureFac(System::String^ NomTable, int id)
 {
 	System::String^ sql;
 	this->oMappClient->setId(id);

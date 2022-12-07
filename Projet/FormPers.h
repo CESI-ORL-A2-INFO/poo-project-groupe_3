@@ -56,6 +56,7 @@ namespace Projet {
 	private: System::Data::DataSet^ oDs;
 	private: System::Data::DataSet^ DataPers;
 	private: System::Windows::Forms::TextBox^ textBox10;
+	private: System::Windows::Forms::Button^ button7;
 	protected:
 
 	protected:
@@ -92,6 +93,7 @@ namespace Projet {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
+			this->button7 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -263,11 +265,22 @@ namespace Projet {
 			this->textBox10->Text = L"Id Adresse";
 			this->textBox10->TextChanged += gcnew System::EventHandler(this, &Form2::textBox10_TextChanged);
 			// 
+			// button7
+			// 
+			this->button7->Location = System::Drawing::Point(46, 369);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(124, 23);
+			this->button7->TabIndex = 19;
+			this->button7->Text = L"Test Création";
+			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &Form2::button7_Click);
+			// 
 			// Form2
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(707, 432);
+			this->Controls->Add(this->button7);
 			this->Controls->Add(this->textBox10);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
@@ -337,6 +350,10 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	}
 }
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
+private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+	NS_Svc_Pers::CServicePers^ testSvc = gcnew NS_Svc_Pers::CServicePers();
+	testSvc->AjouterPersonnel("test", "test", "2001/01/01", 11, 2);
 }
 };
 }

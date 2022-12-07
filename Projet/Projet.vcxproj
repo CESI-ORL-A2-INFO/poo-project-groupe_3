@@ -149,7 +149,6 @@
   <ItemGroup>
     <ClInclude Include="Cadb.h" />
     <ClInclude Include="CmapAdFac.h" />
-    <ClInclude Include="CmapAdLiv.h" />
     <ClInclude Include="CmapAdresse.h" />
     <ClInclude Include="CmapArticle.h" />
     <ClInclude Include="CmapClient.h" />
@@ -183,6 +182,7 @@
     <ClInclude Include="FormStock.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CmapAdLiv.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>

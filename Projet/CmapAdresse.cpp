@@ -2,22 +2,28 @@
 
 System::String^ NS_Comp_Ad::CmapAdresse::Select()
 {
-	return "";
+	return "SELECT * FROM Adresse";
 }
+
+System::String^ NS_Comp_Ad::CmapAdresse::SelectId()
+{
+	return "SELECT * FROM Adresse WHERE IdAdresse = '" + this->Id + "'";
+}
+
 
 System::String^ NS_Comp_Ad::CmapAdresse::Insert()
 {
-	return "";
+	return "INSERT INTO Adresse VALUES ('" + this->numero + "','" + this->rue + "','" + this->CP + "','" + this->ville + "')";
 }
 
 System::String^ NS_Comp_Ad::CmapAdresse::Delete()
 {
-	return "";
+	return "DELETE FROM Adresse WHERE Adresse_ID = '" + this->Id + "'";
 }
 
 System::String^ NS_Comp_Ad::CmapAdresse::Update()
 {
-	return "";
+	return "UPDATE Adresse SET numero = '" + this->numero + "', rue = '" + this->rue + "', cp = '" + this->CP + "', ville = '" + this->ville + "')";
 }
 
 void NS_Comp_Ad::CmapAdresse::setId(int id)

@@ -193,6 +193,7 @@ namespace Projet {
 			this->button2->TabIndex = 13;
 			this->button2->Text = L"Adresse Facturation";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Form6::button2_Click_1);
 			// 
 			// dataGridView2
 			// 
@@ -244,7 +245,7 @@ namespace Projet {
 		this->dataGridView1->DataMember = "Client";
 	}
 
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button2_Click_1(System::Object^ sender, System::EventArgs^ e) {
 		this->dataGridView2->Refresh();
 		this->oDs = this->oSvc->SelectionnerFactureFac("Client", int::Parse(this->textBox1->Text));
 		this->dataGridView2->DataSource = this->oDs;

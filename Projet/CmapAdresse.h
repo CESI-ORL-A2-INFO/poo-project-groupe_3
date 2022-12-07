@@ -12,6 +12,7 @@ namespace NS_Comp_Ad
 		System::String^ ville;
 	public:
 		System::String^ Select(void);
+		System::String^ SelectId(void);
 		System::String^ Insert(void);
 		System::String^ Delete(void);
 		System::String^ Update(void);

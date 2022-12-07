@@ -4,6 +4,7 @@ NS_Svc_Com::CServiceCom::CServiceCom()
 {
 	this->oCad = gcnew NS_Comp_Data::Cadb();
 	this->oMappCom = gcnew NS_Comp_Com::CmapCom();
+	this->oMappPayer = gcnew NS_Comp_Payer::CmapPayer();
 }
 
 System::Data::DataSet^ NS_Svc_Com::CServiceCom::SelectionnerToutCommande(System::String^ NomTable)
@@ -56,4 +57,52 @@ void NS_Svc_Com::CServiceCom::SuppCommande(System::String^ RefCommande)
 
 	sql = this->oMappCom->Delete();
 	this->oCad->actionRows(sql);
+}
+
+System::Data::DataSet^ NS_Svc_Com::CServiceCom::SelectionnerToutPaiement(System::String^ NomTable)
+{
+	System::String^ sql;
+	sql = this->oMappPayer->SelectAll();
+	return this->oCad->getRows(sql, NomTable);
+}
+
+System::Data::DataSet^ NS_Svc_Com::CServiceCom::SelectionnerPaiement(System::String^ NomTable, int Id)
+{
+	System::String^ sql;
+	this->oMappPayer->setRef(Id);
+	sql = this->oMappPayer->Select();
+	return this->oCad->getRows(sql, NomTable);
+}
+
+void NS_Svc_Com::CServiceCom::AjouterPaiement(System::String^ RefCom, System::String^ date, float Prix, int Id)
+{
+	System::String^ sql;
+	this->oMappPayer->setRefCommande(RefCom);
+	this->oMappPayer->setDate(date);
+	this->oMappPayer->setPrix(Prix);
+	this->oMappPayer->setIdMoyen(Id);
+	sql = this->oMappPayer->Insert();
+	this->oCad->actionRows(sql);
+
+}
+
+void NS_Svc_Com::CServiceCom::ModifierPaiement(int Ref, System::String^ date, float Prix, int Id)
+{
+	System::String^ sql;
+	this->oMappPayer->setRef(Ref);
+	this->oMappPayer->setDate(date);
+	this->oMappPayer->setPrix(Prix);
+	this->oMappPayer->setIdMoyen(Id);
+	sql = this->oMappPayer->Update();
+	this->oCad->actionRows(sql);
+
+}
+
+void NS_Svc_Com::CServiceCom::SuppPaiement(int Ref)
+{
+	System::String^ sql;
+	this->oMappPayer->setRef(Ref);
+	sql = this->oMappPayer->Delete();
+	this->oCad->actionRows(sql);
+
 }
