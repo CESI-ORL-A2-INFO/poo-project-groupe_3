@@ -413,7 +413,7 @@ private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e
 	
 }
 private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->oSvc->ModifierAdresse(int::Parse(this->textBox10->Text), int::Parse(this->textBox6->Text), this->textBox7->Text, this->textBox8->Text, this->textBox9->Text);
+	this->oSvc2->ModifierAdresse(int::Parse(this->textBox10->Text), int::Parse(this->textBox6->Text), this->textBox7->Text, this->textBox8->Text, this->textBox9->Text);
 
 }
 private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ e) {

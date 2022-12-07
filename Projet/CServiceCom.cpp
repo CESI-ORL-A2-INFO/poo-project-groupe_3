@@ -5,6 +5,7 @@ NS_Svc_Com::CServiceCom::CServiceCom()
 	this->oCad = gcnew NS_Comp_Data::Cadb();
 	this->oMappCom = gcnew NS_Comp_Com::CmapCom();
 	this->oMappPayer = gcnew NS_Comp_Payer::CmapPayer();
+	this->oMappContient = gcnew NS_Comp_Contient::CmapContient();
 }
 
 System::Data::DataSet^ NS_Svc_Com::CServiceCom::SelectionnerToutCommande(System::String^ NomTable)
@@ -22,10 +23,10 @@ System::Data::DataSet^ NS_Svc_Com::CServiceCom::SelectionnerCommande(System::Str
 	return this->oCad->getRows(sql, NomTable);
 }
 
-void NS_Svc_Com::CServiceCom::AjouterCommande(System::String^ RefCommande, System::String^ reg, System::String^ emi, System::String^ liv, int IdClient)
+void NS_Svc_Com::CServiceCom::AjouterCommande(System::String^ ref,System::String^ reg, System::String^ emi, System::String^ liv, int IdClient)
 {
 	System::String^ sql;
-	this->oMappCom->setRef(RefCommande);
+	this->oMappCom->setRef(ref);
 	this->oMappCom->setDate_reg(reg);
 	this->oMappCom->setDate_emi(emi);
 	this->oMappCom->setDate_liv(liv);
@@ -104,5 +105,12 @@ void NS_Svc_Com::CServiceCom::SuppPaiement(int Ref)
 	this->oMappPayer->setRef(Ref);
 	sql = this->oMappPayer->Delete();
 	this->oCad->actionRows(sql);
+}
 
+void NS_Svc_Com::CServiceCom::AjouterContenu(System::String^ RefA, System::String^ RefC) {
+	System::String^ sql;
+	this->oMappContient->setRefArt(RefA);
+	this->oMappContient->setRefCom(RefC);
+	sql = this->oMappContient->Insert();
+	this->oCad->actionRows(sql);
 }

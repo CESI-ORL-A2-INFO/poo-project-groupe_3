@@ -72,6 +72,8 @@ namespace Projet {
 	private: System::Windows::Forms::Button^ button11;
 	private: System::Windows::Forms::TextBox^ textBox7;
 	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::TextBox^ textBox9;
+	private: System::Windows::Forms::Button^ button12;
 	protected:
 
 	private:
@@ -114,6 +116,8 @@ namespace Projet {
 			this->button11 = (gcnew System::Windows::Forms::Button());
 			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
+			this->button12 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->SuspendLayout();
@@ -365,11 +369,32 @@ namespace Projet {
 			this->label5->TabIndex = 54;
 			this->label5->Text = L"Id paiement";
 			// 
+			// textBox9
+			// 
+			this->textBox9->Location = System::Drawing::Point(1033, 185);
+			this->textBox9->Name = L"textBox9";
+			this->textBox9->Size = System::Drawing::Size(100, 20);
+			this->textBox9->TabIndex = 55;
+			this->textBox9->Text = L"Ref Article";
+			this->textBox9->TextChanged += gcnew System::EventHandler(this, &Form4::textBox9_TextChanged);
+			// 
+			// button12
+			// 
+			this->button12->Location = System::Drawing::Point(810, 185);
+			this->button12->Name = L"button12";
+			this->button12->Size = System::Drawing::Size(141, 23);
+			this->button12->TabIndex = 56;
+			this->button12->Text = L"Ajouter Article";
+			this->button12->UseVisualStyleBackColor = true;
+			this->button12->Click += gcnew System::EventHandler(this, &Form4::button12_Click);
+			// 
 			// Form4
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1198, 588);
+			this->Controls->Add(this->button12);
+			this->Controls->Add(this->textBox9);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->textBox7);
 			this->Controls->Add(this->button11);
@@ -463,6 +488,11 @@ private: System::Void textBox7_TextChanged(System::Object^ sender, System::Event
 }
 private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->oSvc2->SuppPaiement(int::Parse(this->textBox7->Text));
+}
+private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->oSvc->AjouterContenu(this->textBox9->Text, this->textBox1->Text);
+}
+private: System::Void textBox9_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

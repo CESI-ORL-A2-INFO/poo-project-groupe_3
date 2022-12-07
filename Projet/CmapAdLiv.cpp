@@ -2,23 +2,22 @@
 
 System::String^ NS_Comp_AdL::CmapAdLiv::Select()
 {
-	return "SELECT * FROM Posseder_Fac";
+	return "SELECT * FROM Posseder_Liv";
 }
 
 System::String^ NS_Comp_AdL::CmapAdLiv::SelectId()
 {
-	return "SELECT * FROM Posseder_Fac WHERE IdClient = '" + this->IdClient + "' OR IdAdresse = '" + this->IdAdresse + "'";
+	return "SELECT * FROM Posseder_Liv WHERE IdClient = '" + this->IdClient + "' OR IdAdresse = '" + this->IdAdresse + "'";
 }
-
 
 System::String^ NS_Comp_AdL::CmapAdLiv::Insert()
 {
-	return "INSERT INTO Posseder_Fac VALUES ('" + this->IdClient + "','" + this->IdClient + "')";
+	return "INSERT INTO Posseder_Liv (IdClient, IdAdresse) VALUES ('" + this->IdClient + "','" + this->IdAdresse + "')";
 }
 
 System::String^ NS_Comp_AdL::CmapAdLiv::Delete()
 {
-	return "";
+	return "DELETE FROM Posseder_liv WHERE IdAdresse = '" + this->IdAdresse + "' AND IdClient = '" + this->IdClient + "'";
 }
 
 System::String^ NS_Comp_AdL::CmapAdLiv::Update()

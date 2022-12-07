@@ -36,7 +36,7 @@ namespace Projet {
 		}
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
-	private: System::Windows::Forms::Label^ label2;
+
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::TextBox^ textBox9;
 	private: System::Windows::Forms::TextBox^ textBox8;
@@ -47,28 +47,36 @@ namespace Projet {
 	private: System::Windows::Forms::TextBox^ textBox3;
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::Button^ button7;
+
 	private: System::Windows::Forms::Button^ button6;
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::TextBox^ textBox5;
+
+
 	private: System::Windows::Forms::ContextMenuStrip^ contextMenuStrip1;
-	private: System::Windows::Forms::TextBox^ textBox10;
-	private: System::Windows::Forms::TextBox^ textBox11;
-	private: System::Windows::Forms::TextBox^ textBox12;
+
+
+
 	private: System::ComponentModel::IContainer^ components;
 	private: NS_Svc_Client::CServiceClient^ oSvc;
+	private: NS_Svc_Client::CServiceClient^ oSvc2;
 	private: System::Data::DataSet^ DataClient;
 
 	private: System::Windows::Forms::TextBox^ textBox13;
 	private: System::Data::DataSet^ oDs;
+	private: System::Data::DataSet^ oDs2;
 
 	private: System::Windows::Forms::Button^ button8;
 	private: System::Windows::Forms::Button^ button9;
 	private: System::Windows::Forms::DataGridView^ dataGridView2;
+	private: System::Windows::Forms::DataGridView^ dataGridView3;
+	private: System::Windows::Forms::Button^ button7;
+	private: System::Windows::Forms::Button^ button11;
+	private: System::Windows::Forms::Button^ button12;
+	private: System::Windows::Forms::ComboBox^ comboBox1;
+
 	private: System::Windows::Forms::Button^ button10;
 
 	protected:
@@ -89,7 +97,6 @@ namespace Projet {
 			this->components = (gcnew System::ComponentModel::Container());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
@@ -99,30 +106,30 @@ namespace Projet {
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
-			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox11 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox12 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox13 = (gcnew System::Windows::Forms::TextBox());
-			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
 			this->button10 = (gcnew System::Windows::Forms::Button());
+			this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
+			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->button11 = (gcnew System::Windows::Forms::Button());
+			this->button12 = (gcnew System::Windows::Forms::Button());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(702, 463);
+			this->button1->Location = System::Drawing::Point(986, 525);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 23);
 			this->button1->TabIndex = 0;
@@ -139,20 +146,10 @@ namespace Projet {
 			this->dataGridView1->TabIndex = 1;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Form3::dataGridView1_CellContentClick);
 			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(513, 267);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(116, 13);
-			this->label2->TabIndex = 33;
-			this->label2->Text = L"Adresse de Facturation";
-			this->label2->Click += gcnew System::EventHandler(this, &Form3::label2_Click);
-			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(393, 269);
+			this->label1->Location = System::Drawing::Point(349, 253);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(54, 13);
 			this->label1->TabIndex = 32;
@@ -161,7 +158,7 @@ namespace Projet {
 			// 
 			// textBox9
 			// 
-			this->textBox9->Location = System::Drawing::Point(521, 369);
+			this->textBox9->Location = System::Drawing::Point(527, 416);
 			this->textBox9->Name = L"textBox9";
 			this->textBox9->Size = System::Drawing::Size(100, 20);
 			this->textBox9->TabIndex = 31;
@@ -170,7 +167,7 @@ namespace Projet {
 			// 
 			// textBox8
 			// 
-			this->textBox8->Location = System::Drawing::Point(521, 343);
+			this->textBox8->Location = System::Drawing::Point(527, 390);
 			this->textBox8->Name = L"textBox8";
 			this->textBox8->Size = System::Drawing::Size(100, 20);
 			this->textBox8->TabIndex = 30;
@@ -179,7 +176,7 @@ namespace Projet {
 			// 
 			// textBox7
 			// 
-			this->textBox7->Location = System::Drawing::Point(521, 317);
+			this->textBox7->Location = System::Drawing::Point(527, 364);
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(100, 20);
 			this->textBox7->TabIndex = 29;
@@ -188,7 +185,7 @@ namespace Projet {
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(521, 291);
+			this->textBox6->Location = System::Drawing::Point(527, 338);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(100, 20);
 			this->textBox6->TabIndex = 28;
@@ -197,7 +194,7 @@ namespace Projet {
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(384, 369);
+			this->textBox4->Location = System::Drawing::Point(340, 353);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(100, 20);
 			this->textBox4->TabIndex = 26;
@@ -206,7 +203,7 @@ namespace Projet {
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(384, 343);
+			this->textBox3->Location = System::Drawing::Point(340, 327);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(100, 20);
 			this->textBox3->TabIndex = 25;
@@ -215,7 +212,7 @@ namespace Projet {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(384, 317);
+			this->textBox2->Location = System::Drawing::Point(340, 301);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(100, 20);
 			this->textBox2->TabIndex = 24;
@@ -224,15 +221,16 @@ namespace Projet {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(384, 291);
+			this->textBox1->Location = System::Drawing::Point(340, 275);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(100, 20);
 			this->textBox1->TabIndex = 23;
 			this->textBox1->Text = L"Id";
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &Form3::textBox1_TextChanged);
+			// 
 			// button6
 			// 
-			this->button6->Location = System::Drawing::Point(213, 325);
+			this->button6->Location = System::Drawing::Point(169, 309);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(141, 23);
 			this->button6->TabIndex = 22;
@@ -242,7 +240,7 @@ namespace Projet {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(213, 392);
+			this->button5->Location = System::Drawing::Point(169, 376);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(141, 23);
 			this->button5->TabIndex = 21;
@@ -252,7 +250,7 @@ namespace Projet {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(213, 360);
+			this->button4->Location = System::Drawing::Point(169, 344);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(141, 23);
 			this->button4->TabIndex = 20;
@@ -262,7 +260,7 @@ namespace Projet {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(213, 292);
+			this->button3->Location = System::Drawing::Point(169, 276);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(141, 23);
 			this->button3->TabIndex = 19;
@@ -272,7 +270,7 @@ namespace Projet {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(72, 292);
+			this->button2->Location = System::Drawing::Point(28, 276);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(124, 123);
 			this->button2->TabIndex = 18;
@@ -280,63 +278,22 @@ namespace Projet {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &Form3::button2_Click);
 			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(645, 267);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(101, 13);
-			this->label3->TabIndex = 34;
-			this->label3->Text = L"Adresse de livraison";
-			// 
-			// textBox5
-			// 
-			this->textBox5->Location = System::Drawing::Point(645, 291);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(100, 20);
-			this->textBox5->TabIndex = 35;
-			this->textBox5->Text = L"Numero";
-			// 
 			// contextMenuStrip1
 			// 
 			this->contextMenuStrip1->Name = L"contextMenuStrip1";
 			this->contextMenuStrip1->Size = System::Drawing::Size(61, 4);
 			// 
-			// textBox10
-			// 
-			this->textBox10->Location = System::Drawing::Point(645, 317);
-			this->textBox10->Name = L"textBox10";
-			this->textBox10->Size = System::Drawing::Size(100, 20);
-			this->textBox10->TabIndex = 37;
-			this->textBox10->Text = L"Rue";
-			// 
-			// textBox11
-			// 
-			this->textBox11->Location = System::Drawing::Point(645, 344);
-			this->textBox11->Name = L"textBox11";
-			this->textBox11->Size = System::Drawing::Size(100, 20);
-			this->textBox11->TabIndex = 38;
-			this->textBox11->Text = L"Code Postal";
-			// 
-			// textBox12
-			// 
-			this->textBox12->Location = System::Drawing::Point(645, 369);
-			this->textBox12->Name = L"textBox12";
-			this->textBox12->Size = System::Drawing::Size(100, 20);
-			this->textBox12->TabIndex = 39;
-			this->textBox12->Text = L"Ville";
-			// 
 			// textBox13
 			// 
-			this->textBox13->Location = System::Drawing::Point(384, 395);
+			this->textBox13->Location = System::Drawing::Point(340, 379);
 			this->textBox13->Name = L"textBox13";
 			this->textBox13->Size = System::Drawing::Size(100, 20);
 			this->textBox13->TabIndex = 41;
 			this->textBox13->Text = L"Id Adresse";
 			this->textBox13->TextChanged += gcnew System::EventHandler(this, &Form3::textBox13_TextChanged);
-		// 
-		// button8
-		// 
+			// 
+			// button8
+			// 
 			this->button8->Location = System::Drawing::Point(557, 448);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(100, 23);
@@ -370,18 +327,64 @@ namespace Projet {
 			this->button10->Text = L"Générer adresse";
 			this->button10->UseVisualStyleBackColor = true;
 			// 
+			// dataGridView3
+			// 
+			this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView3->Location = System::Drawing::Point(719, 331);
+			this->dataGridView3->Name = L"dataGridView3";
+			this->dataGridView3->Size = System::Drawing::Size(342, 175);
+			this->dataGridView3->TabIndex = 42;
+			this->dataGridView3->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Form3::dataGridView3_CellContentClick);
+			// 
+			// button7
+			// 
+			this->button7->Location = System::Drawing::Point(527, 503);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(98, 52);
+			this->button7->TabIndex = 43;
+			this->button7->Text = L"Afficher Adresse";
+			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &Form3::button7_Click);
+			// 
+			// button11
+			// 
+			this->button11->Location = System::Drawing::Point(527, 445);
+			this->button11->Name = L"button11";
+			this->button11->Size = System::Drawing::Size(98, 23);
+			this->button11->TabIndex = 44;
+			this->button11->Text = L"Ajouter Adresse";
+			this->button11->UseVisualStyleBackColor = true;
+			this->button11->Click += gcnew System::EventHandler(this, &Form3::button11_Click);
+			// 
+			// button12
+			// 
+			this->button12->Location = System::Drawing::Point(527, 474);
+			this->button12->Name = L"button12";
+			this->button12->Size = System::Drawing::Size(98, 23);
+			this->button12->TabIndex = 45;
+			this->button12->Text = L"Modifier Adresse";
+			this->button12->UseVisualStyleBackColor = true;
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Adresse de livraison", L"Adresse de facturation" });
+			this->comboBox1->Location = System::Drawing::Point(507, 301);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(138, 21);
+			this->comboBox1->TabIndex = 46;
+			// 
 			// Form3
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(789, 498);
+			this->ClientSize = System::Drawing::Size(1073, 560);
+			this->Controls->Add(this->comboBox1);
+			this->Controls->Add(this->button12);
+			this->Controls->Add(this->button11);
+			this->Controls->Add(this->button7);
+			this->Controls->Add(this->dataGridView3);
 			this->Controls->Add(this->textBox13);
-			this->Controls->Add(this->textBox12);
-			this->Controls->Add(this->textBox11);
-			this->Controls->Add(this->textBox10);
-			this->Controls->Add(this->textBox5);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->textBox9);
 			this->Controls->Add(this->textBox8);
@@ -391,7 +394,6 @@ namespace Projet {
 			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->button7);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
@@ -403,6 +405,8 @@ namespace Projet {
 			this->Text = L"Form3";
 			this->Load += gcnew System::EventHandler(this, &Form3::Form3_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -413,6 +417,7 @@ namespace Projet {
 	}
 	private: System::Void Form3_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew NS_Svc_Client::CServiceClient();
+		this->oSvc2 = gcnew NS_Svc_Client::CServiceClient();
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -464,6 +469,34 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
 private: System::Void textBox13_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+	if ((this->comboBox1->SelectedIndex + 1) == 1)
+	{
+		this->dataGridView3->Refresh();
+		this->oDs2 = this->oSvc2->AfficherAdresseLiv("Adresse", int::Parse(this->textBox1->Text));
+		this->dataGridView3->DataSource = this->oDs2;
+		this->dataGridView3->DataMember = "Adresse";
+	}
+	else {
+		
+		this->dataGridView3->Refresh();
+		this->oDs2 = this->oSvc2->AfficherAdresse("Adresse");
+		this->dataGridView3->DataSource = this->oDs2;
+		this->dataGridView3->DataMember = "Adresse";
+	}
+	
+}
+private: System::Void dataGridView3_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
+private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->oSvc2->AjouterAdresse(int::Parse(this->textBox6->Text), this->textBox7->Text, this->textBox8->Text, this->textBox9->Text);;
+	if ((this->comboBox1->SelectedIndex+1) == 1) { // adresse livraison
+		this->oSvc2->AjouterAdLiv(int::Parse(this->textBox1->Text), int::Parse(this->textBox13->Text));
+	}
+	else {
+		this->oSvc2->ModifierClient(int::Parse(this->textBox1->Text), this->textBox2->Text, this->textBox3->Text, this->textBox4->Text, int::Parse(this->textBox13->Text));
+	}
 }
 };
 }

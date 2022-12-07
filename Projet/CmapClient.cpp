@@ -31,7 +31,7 @@ System::String^ NS_Comp_Client::CmapClient::FactureLiv()
 
 System::String^ NS_Comp_Client::CmapClient::FactureFac()
 {
-	return "SELECT nom, numero, Rue, CP, Ville FROM Client INNER JOIN Posseder_liv ON Client.IdAd = Posseder_liv.IdAdresse INNER JOIN Adresse ON Client.IdAd = Adresse.IdAdresse WHERE IdClient = '" + this->Id + "'";
+	return "SELECT nom, numero, Rue, CP, Ville FROM Client INNER JOIN Posseder_liv ON Client.IdAd = Posseder_liv.IdAdresse INNER JOIN Adresse ON Client.IdAd = Adresse.IdAdresse WHERE Client.IdClient = '" + this->Id + "'";
 }
 void NS_Comp_Client::CmapClient::setId(int id)
 {

@@ -47,7 +47,9 @@ namespace Projet {
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: NS_Svc_Client::CServiceClient^ oSvc;
+	private: NS_Svc_Client::CServiceClient^ oSvc2;
 	private: System::Data::DataSet^ oDs;
+	private: System::Data::DataSet^ oDs2;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Button^ button2;
@@ -108,7 +110,7 @@ namespace Projet {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(0, 296);
+			this->label4->Location = System::Drawing::Point(21, 331);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(67, 13);
 			this->label4->TabIndex = 4;
@@ -117,7 +119,7 @@ namespace Projet {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(0, 316);
+			this->label5->Location = System::Drawing::Point(21, 351);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(101, 13);
 			this->label5->TabIndex = 5;
@@ -126,7 +128,7 @@ namespace Projet {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(-1, 369);
+			this->label6->Location = System::Drawing::Point(20, 441);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(122, 13);
 			this->label6->TabIndex = 6;
@@ -163,14 +165,14 @@ namespace Projet {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(174, 282);
+			this->dataGridView1->Location = System::Drawing::Point(195, 317);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(240, 66);
+			this->dataGridView1->Size = System::Drawing::Size(334, 117);
 			this->dataGridView1->TabIndex = 10;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(37, 332);
+			this->button1->Location = System::Drawing::Point(58, 367);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 23);
 			this->button1->TabIndex = 11;
@@ -180,14 +182,14 @@ namespace Projet {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(73, 293);
+			this->textBox1->Location = System::Drawing::Point(94, 328);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(77, 20);
 			this->textBox1->TabIndex = 12;
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(19, 402);
+			this->button2->Location = System::Drawing::Point(40, 474);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(113, 23);
 			this->button2->TabIndex = 13;
@@ -198,16 +200,16 @@ namespace Projet {
 			// dataGridView2
 			// 
 			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView2->Location = System::Drawing::Point(174, 386);
+			this->dataGridView2->Location = System::Drawing::Point(195, 458);
 			this->dataGridView2->Name = L"dataGridView2";
-			this->dataGridView2->Size = System::Drawing::Size(240, 56);
+			this->dataGridView2->Size = System::Drawing::Size(334, 112);
 			this->dataGridView2->TabIndex = 14;
 			// 
 			// Form6
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(478, 454);
+			this->ClientSize = System::Drawing::Size(554, 595);
 			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->textBox1);
@@ -234,6 +236,7 @@ namespace Projet {
 #pragma endregion
 	private: System::Void Form6_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew NS_Svc_Client::CServiceClient();
+		this->oSvc2 = gcnew NS_Svc_Client::CServiceClient();
 
 	}
 	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -247,8 +250,8 @@ namespace Projet {
 
 	private: System::Void button2_Click_1(System::Object^ sender, System::EventArgs^ e) {
 		this->dataGridView2->Refresh();
-		this->oDs = this->oSvc->SelectionnerFactureFac("Client", int::Parse(this->textBox1->Text));
-		this->dataGridView2->DataSource = this->oDs;
+		this->oDs2 = this->oSvc2->SelectionnerFactureFac("Client", int::Parse(this->textBox1->Text));
+		this->dataGridView2->DataSource = this->oDs2;
 		this->dataGridView2->DataMember = "Client";
 	}
 };

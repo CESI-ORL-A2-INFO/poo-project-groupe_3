@@ -2,12 +2,12 @@
 
 System::String^ NS_Comp_Contient::CmapContient::Select()
 {
-	return "";
+	return "SELECT * FROM contient";
 }
 
 System::String^ NS_Comp_Contient::CmapContient::Insert()
 {
-	return "";
+	return "INSERT INTO contient (RefCom, RefArt) VALUES ( '" + this->ReferenceC + "','" + this->ReferenceA + "')";
 }
 
 System::String^ NS_Comp_Contient::CmapContient::Delete()
