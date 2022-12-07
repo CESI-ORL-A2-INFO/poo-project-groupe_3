@@ -1,5 +1,6 @@
 #pragma once
 #include "CmapPers.h"
+#include "CmapAdresse.h"
 #include "Cadb.h"
 
 namespace NS_Svc_Pers
@@ -9,6 +10,7 @@ namespace NS_Svc_Pers
 	private:
 		NS_Comp_Data::Cadb^ oCad;
 		NS_Comp_Pers::CmapPers^ oMappPers;
+		NS_Comp_Ad::CmapAdresse^ oMappAdresse;
 	public:
 		CServicePers(void);
 		System::Data::DataSet^ SelectionnerToutPersonnel(System::String^);
@@ -17,5 +19,8 @@ namespace NS_Svc_Pers
 		void ModifierPersonnel(int, System::String^, System::String^, System::String^, int, int);
 		// RefArticle -- Nom -- Quantite -- Montant - IdTva -- IdSeuil
 		void SuppPersonnel(int id);
+		System::Data::DataSet^ AfficherAdresse(System::String^);
+		void AjouterAdresse(int, System::String^, System::String^, System::String^);
+		void ModifierAdresse(int, int, System::String^, System::String^, System::String^);
 	};
 }

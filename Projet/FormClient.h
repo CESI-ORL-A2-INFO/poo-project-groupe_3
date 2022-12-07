@@ -47,6 +47,7 @@ namespace Projet {
 	private: System::Windows::Forms::TextBox^ textBox3;
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Button^ button7;
 	private: System::Windows::Forms::Button^ button6;
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Button^ button4;
@@ -64,6 +65,12 @@ namespace Projet {
 
 	private: System::Windows::Forms::TextBox^ textBox13;
 	private: System::Data::DataSet^ oDs;
+
+	private: System::Windows::Forms::Button^ button8;
+	private: System::Windows::Forms::Button^ button9;
+	private: System::Windows::Forms::DataGridView^ dataGridView2;
+	private: System::Windows::Forms::Button^ button10;
+
 	protected:
 
 	private:
@@ -92,6 +99,7 @@ namespace Projet {
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
@@ -104,6 +112,11 @@ namespace Projet {
 			this->textBox11 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox12 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox13 = (gcnew System::Windows::Forms::TextBox());
+			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->button8 = (gcnew System::Windows::Forms::Button());
+			this->button9 = (gcnew System::Windows::Forms::Button());
+			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
+			this->button10 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -217,7 +230,6 @@ namespace Projet {
 			this->textBox1->TabIndex = 23;
 			this->textBox1->Text = L"Id";
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &Form3::textBox1_TextChanged);
-			// 
 			// button6
 			// 
 			this->button6->Location = System::Drawing::Point(213, 325);
@@ -322,6 +334,41 @@ namespace Projet {
 			this->textBox13->TabIndex = 41;
 			this->textBox13->Text = L"Id Adresse";
 			this->textBox13->TextChanged += gcnew System::EventHandler(this, &Form3::textBox13_TextChanged);
+		// 
+		// button8
+		// 
+			this->button8->Location = System::Drawing::Point(557, 448);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(100, 23);
+			this->button8->TabIndex = 20;
+			this->button8->Text = L"Ajouter Adresse";
+			this->button8->UseVisualStyleBackColor = true;
+			// 
+			// button9
+			// 
+			this->button9->Location = System::Drawing::Point(557, 477);
+			this->button9->Name = L"button9";
+			this->button9->Size = System::Drawing::Size(100, 23);
+			this->button9->TabIndex = 21;
+			this->button9->Text = L"Modifier Adresse";
+			this->button9->UseVisualStyleBackColor = true;
+			// 
+			// dataGridView2
+			// 
+			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView2->Location = System::Drawing::Point(715, 278);
+			this->dataGridView2->Name = L"dataGridView2";
+			this->dataGridView2->Size = System::Drawing::Size(379, 222);
+			this->dataGridView2->TabIndex = 22;
+			// 
+			// button10
+			// 
+			this->button10->Location = System::Drawing::Point(557, 506);
+			this->button10->Name = L"button10";
+			this->button10->Size = System::Drawing::Size(100, 52);
+			this->button10->TabIndex = 23;
+			this->button10->Text = L"Générer adresse";
+			this->button10->UseVisualStyleBackColor = true;
 			// 
 			// Form3
 			// 
@@ -344,6 +391,7 @@ namespace Projet {
 			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->button7);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);

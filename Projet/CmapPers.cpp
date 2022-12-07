@@ -2,12 +2,12 @@
 
 System::String^ NS_Comp_Pers::CmapPers::Select()
 {
-	return "SELECT [IdPersonnel],[nom],[prenom],[date_embauche],[IdPersonnel_1],[CP],[IdAd] FROM [Personnel] INNER JOIN Adresse ON Personnel.IdAd = Adresse.IdAdresse";
+	return "SELECT [IdPersonnel],[nom],[prenom],[date_embauche],[IdPersonnel_1] as Superieur,[CP],[IdAd] FROM [Personnel] INNER JOIN Adresse ON Personnel.IdAd = Adresse.IdAdresse";
 }
 
 System::String^ NS_Comp_Pers::CmapPers::SelectId()
 {
-	return "SELECT [IdPersonnel],[nom],[prenom],[date_embauche],[IdPersonnel_1],[CP],[IdAd] FROM [Personnel] INNER JOIN Adresse ON Personnel.IdAd = Adresse.IdAdresse WHERE IdPersonnel = '"+this->Id+"'";
+	return "SELECT [IdPersonnel],[nom],[prenom],[date_embauche],[IdPersonnel_1] as Superieur,[CP],[IdAd] FROM [Personnel] INNER JOIN Adresse ON Personnel.IdAd = Adresse.IdAdresse WHERE IdPersonnel = '"+this->Id+"'";
 }
 
 System::String^ NS_Comp_Pers::CmapPers::Insert()

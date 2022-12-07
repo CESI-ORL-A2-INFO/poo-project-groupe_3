@@ -6,6 +6,7 @@ namespace NS_Comp_Ad
 	private:
 		System::String^ sSql;
 		int Id;
+		int IdP;
 		int numero;
 		System::String^ rue;
 		System::String^ CP;
@@ -16,6 +17,7 @@ namespace NS_Comp_Ad
 		System::String^ Insert(void);
 		System::String^ Delete(void);
 		System::String^ Update(void);
+		System::String^ Search(void);
 		void setId(int);
 		int getId();
 		void setNumero(int);
@@ -26,6 +28,8 @@ namespace NS_Comp_Ad
 		System::String^ getCP();
 		void setVille(System::String^);
 		System::String^ getVille();
+		void setIdP(int);
+		int getIdP();
 
 	};
 }

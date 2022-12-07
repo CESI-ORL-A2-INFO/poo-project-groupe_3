@@ -15,7 +15,7 @@ namespace NS_Comp_Data
 		Cadb();
 		System::Data::DataSet^ getRows(System::String^, System::String^);
 		void actionRows(System::String^);
-		System::Object^ scalarRows(System::String^);
+		int scalarRows(System::String^);
 	};
 }
 

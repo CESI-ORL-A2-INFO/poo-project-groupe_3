@@ -33,13 +33,13 @@ void NS_Comp_Data::Cadb::actionRows(System::String^ sSql)
 	this->oCnx->Close();
 }
 
-System::Object^ NS_Comp_Data::Cadb::scalarRows(System::String^ sSql)
+int NS_Comp_Data::Cadb::scalarRows(System::String^ sSql)
 {
 	this->sSql = sSql;
 	this->oCmd->CommandText = this->sSql;
 	this->oDa->SelectCommand = this->oCmd;
 	this->oCnx->Open();
-	System::Object^ result = this->oCmd->ExecuteScalar();
+	int result = (int)(this->oCmd->ExecuteScalar());
 	this->oCnx->Close();
 	return result;
 }
